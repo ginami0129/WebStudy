@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Untitled Document</title>
+
+        <script>
+            /*
+             
+            03 클래스 생김새
+            
+               - 자바스크립트에서 클래스 만드는 방법(연관있는 함수와 변수를 묶는 방법)
+                    1) 오브젝트 리터럴 
+                    2) 함수 방식 클래스 
+                    3) prototype 방식 클래스 
+                    이 내용은 추후 중급편(4부 자바스크립트 클래스와 클래스 단위 프로그래밍)에서 다루게 됩니다.      
+                
+             */
+            
+            // 계산기
+            function Calculator(){
+                this.add = function(a,b){
+                    alert("두 수의 합은 "+(a+b)+"입니다.");
+                }
+                this.sub =function(a,b){
+                    alert("두 수의 차는 "+(a-b)+"입니다.");
+                }
+                
+                this.mul=function(a,b){
+                    alert("두 수의 곱은 "+(a*b)+"입니다.");
+                }
+                
+                this.div=function(a,b){
+                    alert("두 수의 나눈 값은 "+(a/b)+"입니다.");
+                }
+            }
+
+
+
+        </script>
+    </head>
+
+    <body>
+</html>

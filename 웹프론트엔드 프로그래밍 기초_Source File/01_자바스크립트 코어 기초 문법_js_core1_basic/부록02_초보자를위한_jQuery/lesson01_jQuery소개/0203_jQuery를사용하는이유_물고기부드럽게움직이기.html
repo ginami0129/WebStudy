@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Untitled Document</title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+            #panel {
+                width: 600px;
+                height: 300px;
+                border: 1px solid #999;
+                position: relative;
+            }
+
+            #bar {
+                position: absolute;
+                left: 50px;
+                top: 190px;
+                width: 500px;
+                height: 20px;
+                background: #F30;
+            }
+
+            #fish {
+                position: absolute;
+                left: 50px;
+                top: 120px;
+            }
+
+            #nav {
+                text-align: center;
+                width: 600px;
+            }
+        </style>
+        <head>
+
+            <script src="../libs/jquery-1.11.0.min.js"></script>
+            <script>
+            /*
+             * 3. jQuery를 사용하는 이유 
+             * 
+             *      - jQuery에는 다음과 같이 부드럽게 움직일 수 있는 애니메이션 기능을 제공합니다.
+             *      - 이런 기능은 자바스크립트에서는 제공하지 않습니다.
+             * 
+             */
+                $(document).ready(function() {
+                    // 물고기 노드 구하기.
+                    var $fish = $("#fish");
+
+                    // 버튼에 이벤트 걸기.
+                    $("#btnStart").click(function() {
+                        $fish.animate({
+                            left : "430px"
+                        }, 1000);
+                    });
+                })
+
+            </script>
+
+        </head>
+
+        <body>
+            <div id="panel">
+                <div id="bar"></div>
+                <img src="fish.png" id="fish">
+            </div>
+
+            <div id="nav">
+                <button id="btnStart">
+                    물고기 움직이기
+                </button>
+            </div>
+        </body>
+
+</html>

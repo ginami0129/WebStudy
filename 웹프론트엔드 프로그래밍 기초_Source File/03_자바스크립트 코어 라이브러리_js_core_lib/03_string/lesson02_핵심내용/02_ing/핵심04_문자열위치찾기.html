@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+
+		<script>
+			/*
+			 04 문자(열) 위치 찾기
+			 ------------------------------
+			 indexOf() 메서드를 이용하면 특정 문자 또는 문자열이 위치하고 있는 위치 값을 쉽게 구할 수 있습니다.
+
+			 1)사용법
+				 문법:
+				 var ch = 문자열. indexOf (searchvalue,start);
+	
+				 매개변수 :
+					 searchvalue: 찾는 문자열
+					 start : 시작 위치, 기본값은 0
+		
+				 리턴 값 :
+				 	찾는 문자열의 위치 값 , 만약 찾지 못할 경우 -1
+				 	
+				 	
+			 2) 예제
+			 문자열을 입력받아 입력받은 문자열에 
+			 sample이라는 문자가 포함돼 있는지 판단 한 후 
+			 만약 존재 한다면 몇 번째 위치에 있는지 출력해주세요. 
+			 존재하지 않는 경우 “문자가 존재하지 않습니다.”라는 메시지를 출력해주세요.
+
+			 */
+
+			var data = window.prompt("문자를 입력해주세요.");
+      var index = data.indexOf("sample");
+      if (index >= 0) {
+        alert(index +"에 있음");
+      } else {
+        alert("없음");
+      }
+
+		</script>
+
+	</head>
+
+	<body>
+
+	</body>
+</html>

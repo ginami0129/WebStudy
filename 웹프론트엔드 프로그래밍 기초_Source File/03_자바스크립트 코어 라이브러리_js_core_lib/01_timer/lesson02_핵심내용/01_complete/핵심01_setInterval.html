@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#output {
+			width: 200px;
+			height: 200px;
+			border: 4px solid #000;
+			margin: 50px;
+			font-size: 100px;
+			text-align: center;
+			line-height: 200px;
+			vertical-align: middle;
+		}
+	</style>
+	<script src="../../../libs/jquery-1.11.0.min.js"></script>
+
+	<script>
+		/*
+		 	핵심 01 일정 시간마다 특정 구문을 실행하는 타이머 만들기
+			------------------------
+			 일정 시간마다 특정 구문을 실행하기 위해서는 setInterval() 함수를 사용합니다.
+	
+			 1) 사용법
+			 문법:
+				 var timerID = setInterval(func, duration)
+				 
+				 매개변수:
+					 func: 지연 시간마다 타이머 함수에 의해 호출되는 일종의 콜백 함수 입니다.
+					 duration: 지연 시간, 단위는 밀리 초 입니다.
+				 리턴 값:
+					 생성된 타이머 ID입니다. 실행한 타이머 함수를 멈출 때 사용합니다.
+	
+			 2)예제
+			 	1초에 한번씩 변수 값을 1씩 증가시키고 이 값을 #output 영역에 출력해주세요.
+
+		 */
+
+		$(document).ready(function() {
+
+			var $output = $("#output");
+			var count = 0;
+
+			// 여기에 풀이를 입력해주세요.
+
+			// 함수 생성
+			function addCount() {
+				// 값 증가
+				count++;
+				// 값을 출력
+				$output.text(count);
+			}
+
+			setInterval(addCount, 1000)
+			addCount();
+		})
+
+	</script>
+
+</head>
+
+<body>
+	<div id="output">
+		0
+	</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>미션</title>
+
+    <style>
+      .tab-menu {
+        list-style: none;
+        height: 80px;
+      }
+
+      .tab-menu li {
+        width: 99px;
+        height: 40px;
+        background-position-y: 0;
+        text-indent: -1000px;
+        overflow: hidden;
+        display: inline-block;
+        float: left;
+      }
+      .tab-menu li:hover {
+        background-position-y: -40px;
+      }
+      .tab-menu li.select {
+        background-position-y: -80px;
+        height: 80px;
+      }
+      .tab-menu li.menuitem1 {
+        background-image: url(./images/newbtn.bar.1.png);
+      }
+      .tab-menu li.menuitem2 {
+        background-image: url(./images/newbtn.bar.2.png);
+      }
+      .tab-menu li.menuitem3 {
+        background-image: url(./images/newbtn.bar.3.png);
+      }
+      .tab-menu li.menuitem4 {
+        background-image: url(./images/newbtn.bar.4.png);
+      }
+      .tab-menu li.menuitem5 {
+        background-image: url(./images/newbtn.bar.5.png);
+      }
+      .tab-menu li.menuitem6 {
+        background-image: url(./images/newbtn.bar.6.png);
+      }
+    </style>
+
+    <script src="../../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+      /*
+ step #03
+    - 두 번째 탭메뉴가 동작하도록 만들기 
+    
+ step #02
+    - 선택자를 매개변수 값으로 빼기
+    
+ step #01
+    - 첫 번째 탭메뉴가 동작하도록 만들기 
+    
+ step #00
+    - 레이아웃 만들기 
+ */
+      $(document).ready(function () {
+        tabMenu("#tabMenu1 li", 0);
+        tabMenu("#tabMenu2 li", 2);
+      });
+
+      function tabMenu(selector, selectIndex) {
+        var $selectItem = null;
+        var $items = $(selector);
+
+        $items.click(function () {
+          var $item =$(this);
+          setSelectItem($item);
+        });
+
+        function setSelectItem($item) {
+          if ($selectItem != null) {
+            $selectItem.removeClass("select");
+          }
+          $selectItem = $item;
+          $selectItem.addClass("select");
+        }
+
+        function setSelectItemAt(index) {
+          var $item = $items.eq(index);
+          setSelectItem($item);
+        }
+        setSelectItemAt(selectIndex);
+      }
+    </script>
+  </head>
+
+  <body>
+    <p>첫 번째 탭메뉴</p>
+    <ul class="tab-menu" id="tabMenu1">
+      <li class="menuitem1">google</li>
+      <li class="menuitem2">facebook</li>
+      <li class="menuitem3">pinterest</li>
+      <li class="menuitem4">twitter</li>
+      <li class="menuitem5">airbnb</li>
+      <li class="menuitem6">path</li>
+    </ul>
+    <p>두 번째 탭메뉴</p>
+    <ul class="tab-menu" id="tabMenu2">
+      <li class="menuitem1">google</li>
+      <li class="menuitem2">facebook</li>
+      <li class="menuitem3">pinterest</li>
+      <li class="menuitem4">twitter</li>
+      <li class="menuitem5">airbnb</li>
+      <li class="menuitem6">path</li>
+    </ul>
+  </body>
+</html>

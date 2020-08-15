@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             this 추가 설명
+
+             click()에서의 this도 이벤트를 발생하는 DOM객체 입니다.
+             $(this) 의 의미는
+             자바스크립트 DOM객체를 감싸고 있는 (관리하는) jQuery 객체 생성
+             */
+            $(document).ready(function() {
+                $("#btn").click(function() {
+                    $(this).html("버튼 클릭");
+                });
+            
+
+            });
+          
+        </script>
+    </head>
+
+    <body>
+        <button id="btn">테스트</button>
+
+    </body>
+
+</html>

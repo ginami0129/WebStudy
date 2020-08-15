@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Untitled Document</title>
+
+        <script>
+            /*
+             
+            05 매개변수
+                
+                - 함수 내부는 함수 외부에서 접근할 수 없음
+                   05_매개변수_함수.png 파일열기
+                   
+                - 매개변수라는 이름에서 알 수 있듯이 일종의 외부 데이터를 
+                  함수 내부로 전달하는 매개체 역할을 하는 변수입니다.
+                - 자판기로 비유하면 동전 넣는 입구를 매개변수라고 하고 
+                  동전을 매개변수 값이라고 보면 됨 .
+                 
+                - 매개변수 위치
+                    05_매개변수위치.png 파일 열기  
+                  
+                
+             */
+           // 다음예에에서 dan이 매개변수 임  
+           function print99DAN(dan) {
+            // 이곳에 특정 기능을 하는 구문이 위치하게 될 거에요.
+            document.write(dan + " * 2 = " + (dan * 2), "<br>");
+            document.write(dan + " * 3 = " + (dan * 3), "<br>");
+            document.write(dan + " * 4 = " + (dan * 4), "<br>");
+            document.write(dan + " * 5 = " + (dan * 5), "<br>");
+            document.write(dan + " * 6 = " + (dan * 6), "<br>");
+            document.write(dan + " * 7 = " + (dan * 7), "<br>");
+            document.write(dan + " * 8 = " + (dan * 8), "<br>");
+            document.write(dan + " * 9 = " + (dan * 9), "<br>");
+        }
+
+        print99DAN(3);
+           
+        </script>
+    </head>
+
+    <body>
+</html>

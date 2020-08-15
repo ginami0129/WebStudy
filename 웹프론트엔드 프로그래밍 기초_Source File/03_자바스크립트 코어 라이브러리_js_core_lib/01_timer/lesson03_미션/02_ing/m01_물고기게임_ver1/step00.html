@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+
+    <style>
+      .info {
+        font-size: 14pt;
+      }
+      .panel {
+        width: 600px;
+        height: 400px;
+        position: relative;
+        border: 2px solid #000;
+      }
+
+      .panel #fish {
+        position: absolute;
+        left: 250px;
+        top: 150px;
+      }
+    </style>
+
+    <script src="../../../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+      /*
+			 미션01 :
+			 5초 동안 버튼을 클릭한 수를 출력하는 간단한 게임만들기 입니다.
+
+			 다음 조건에 맞게 만들어 주세요.
+				 1.	개임이 종료되면 더이상 버튼이 눌리면 안됩니다.
+				 2.	점수는 획득시 바로 바로 출력해주세요.
+
+			 */
+
+      $(document).ready(function () {
+        var count = 0;
+        var $score = $("#score");
+        var play = true;
+
+        // 여기에 코드를 입력해주세요.
+        $("#fish").click(function () {
+          if (play == true) {
+            ++count;
+            $score.text(count);
+          }
+        });
+
+        setTimeout(function () {
+          play = false;
+          alert("게임이 종료 되었습니다.");
+        }, 5000);
+      });
+    </script>
+  </head>
+  <body>
+    <div>현재점수 <span id="score">0</span></div>
+    <div class="panel">
+      <img src="fish1.png" id="fish" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+
+
+		<style>
+			.info {
+				font-size: 14pt;
+			}
+			#start {
+				font-size: 14pt;
+			}
+			.panel {
+				width: 600px;
+				height: 400px;
+				position: relative;
+				border: 2px solid #000;
+				margin-top: 10px;
+			}
+
+			.panel #fish {
+				position: absolute;
+				left: 250px;
+				top: 150px;
+			}
+		</style>
+
+		<script src="../../../../libs/jquery-1.11.0.min.js"></script>
+
+		
+		<script>
+			/*
+			 미션01 :
+				 01장 타이머 함수편의 미션에서 만들었던  물고기 게임을 좀 더 업그레이드 시켜 보겠습니다.
+	
+				 다음 조건에 맞게 만들어 주세요.
+				 1. 일정 시간 동안 누가 많이 물고기를 클릭하는지 알아보는 간단한 게임 입니다.
+				 2. 물고기 클릭시 점수를 1점 증가 시킨 후 화면에 출력해 주세요.
+				 3. 물고기 위치를 0.5초 마다 한번씩 랜덤하게 움직이도록 해주세요.
+				 4. 10초후 게임이 종료되게 만들어 주세요.
+				 5. 가능하면 함수를 활용해 코드를 구조화 시켜 주세요.
+
+
+			 단계 01
+			 	- 전역 변수 생성및 요소 초기화
+
+			 */
+			var count = 0;
+			var $score = null;
+			var $fish = null;
+			var playing = true;
+
+			$(document).ready(function() {
+				/*
+				// 점수 변수
+				var count=0;
+
+				// 점수를 출력할 요소
+				var $score = $("#score");
+
+				// 여기에 코드를 입력해주세요.
+				// 게임 진행 유무 판단 변수
+				var playing=true;
+				// 물고기에 클릭 이벤트 등록
+				$("#fish").click(function(){
+
+				if(playing==true){
+				// 점수 증가
+				count++;
+				$score.html(count);
+				}
+				});
+
+				// 게임을 5초후에 종료시켜 줍니다.
+				setTimeout(function(){
+				playing=false;
+				alert("게임이 종료 되었습니다.")
+				},5000)
+				*/
+
+				// 요소 초기화
+				init();
+
+			});
+
+			// 전역에서 사용할 요소 초기화.
+			function init() {
+				$score = $("#score");
+				$fish = $("#fish");
+			}
+			
+
+		</script>
+	</head>
+	<body>
+		<div>
+			<button id="start">
+				게임 시작
+			</button>
+			현재점수 <span id="score">0</span>
+		</div>
+
+		<div class="panel">
+			<img src="fish1.png" id="fish">
+		</div>
+	</body>
+
+</html>
+

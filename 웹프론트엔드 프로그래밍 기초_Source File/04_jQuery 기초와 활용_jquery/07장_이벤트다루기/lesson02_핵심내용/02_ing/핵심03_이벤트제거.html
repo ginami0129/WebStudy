@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            /*
+             핵심03-등록한 이벤트 제거
+             사용법:
+             $대상.off(“click”, 삭제하고 싶은 이벤트 리스너 명);
+             $대상.off(“click”);
+             $대상.off();
+
+             on() 메서드 또는 단축 형 이벤트 메서드를 이용해 등록한 이벤트를
+             제거하려면 모두 off() 메서드를 사용하면 됩니다.
+
+             이벤트를 제거하는 경우는 총 3가지가 있습니다.
+             경우1. 특정 이벤트에 대한 이벤트 리스너 하나를 제거하는 경우
+             경우2. 특정 이벤트에 대한 모든 이벤트 리스너를 제거하는 경우
+             경우3. 이벤트 종류에 상관없이 모든 이벤트를 제거하는 경우
+
+             경우1. 특정 이벤트에 대한 리스너를 제거하고 싶은 경우
+             다음과 같이 삭제하고 싶은 이벤트 이름과 이벤트 리스너 명을 작성해 주면 됩니다.
+             $대상.off(“click”, 삭제하고 싶은 이벤트 리스너 명);
+
+             경우2. 특정 이벤트에 걸려있는 모든 이벤트 리스너를 제거하고 싶은 경우
+             이벤트이름을 매개변수 값으로 off() 메서드를 호출하면 됩니다.
+             $대상.off(“click”);
+
+             경우3. 모든 이벤트 종류에 상관없이 모든 이벤트를 제거하고 싶은 경우
+             또한 노드에 걸린 모든 이벤트를 제거하고 싶은 경우 off() 메서드만 호출해줍니다.
+             $대상.off();
+
+             예제:
+             이벤트제거 버튼(#btnOff)을 누르면 더 이상 이벤트 리스너가 동작하지
+             않게 확인 버튼(#btn)에 등록한 이벤트를 제거해주세요.
+
+             */
+            $(document).ready(function() {
+                $("#btn").on("click", function() {
+                    alert("환영합니다.");
+                })
+
+                $("#btnOff").click(function() {
+                    $("#btn").off("click");
+                })
+            })
+
+        </script>
+
+    </head>
+
+    <body>
+        <button id="btn">
+            확인
+        </button>
+        <button id="btnOff">
+            이벤트제거
+        </button>
+    </body>
+
+</html>

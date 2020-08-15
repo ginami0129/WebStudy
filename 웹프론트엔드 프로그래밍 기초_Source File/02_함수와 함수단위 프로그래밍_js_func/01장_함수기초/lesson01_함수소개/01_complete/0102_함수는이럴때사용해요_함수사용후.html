@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>예제</title>
+
+    <script>
+        /*
+        함수를 알아보기 전,
+        함수를 왜 배워야 하는지 그리고 함수가 어떤 기능이 있는지
+        예를 이용해 알아보겠습니다.
+
+        가벼운 마음으로 다음에 등장하는 질문을 읽으며 답을 작성해 보세요.
+
+        질문 1: “웹동네”, “짱아”, “딴동네” 이름을 다섯 번씩 출력해주세요.
+        출력결과:
+        1. 웹동네
+        . . .
+        5. 웹동네
+
+        1. 짱아
+        . . .
+        5. 짱아
+
+        1. 딴동네
+        . . .
+        5. 딴동네
+
+        */
+
+        /*-----------------------------
+        풀이2: 함수를 사용한 경우
+
+        */
+        // 함수 정의 (재사용할 코드를 포장하는 기술)
+        function showName(name) {
+            for (var i = 1; i <= 5; i++)
+                document.write(i + "." + name + "입니다.<br>");        
+        }
+
+        // 함수 호출 (함수를 동작하게 하려면
+        // 함수 호출이라는 것을 해줘야 합니다.)
+        showName("웹동네");
+        showName("짱아");
+        showName("딴동네");
+
+        // 설명:
+        // 장점1. 코드 중복 제거 및 코드 재사용
+        // 0102_함수사용후.png 열기
+
+
+        // 장점2. 유지보수 용이성
+         // 위의 코드에서 "입니다"를 제거해주세요.
+         // 이때 
+        // 1)  for를 사용하는 경우
+        // for문에서 "입니다"를 3번 삭제해야줘야 함"
+            for (var i = 1; i <= 5; i++)
+                document.write(i + ". 웹동네 입니다.<br>");
+    
+            for (var i = 1; i <= 10; i++)
+                document.write(i + ". 짱아 입니다.<br>");
+    
+            for (var i = 1; i <= 7; i++)
+                document.write(i + ". 딴동네 입니다.<br>");
+
+        // 2) 함수 사용하는 경우
+            // 함수에서 "입니다"를 한번만 삭제해주면 됨
+            function showName(name, count) {
+                for (var i = 1; i <= count; i++)
+                    document.write(i + "." + name + "입니다.<br>");
+            }
+        
+        showName("웹동네", 5);
+        showName("짱아", 10);
+        showName("딴동네", 7);
+        
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

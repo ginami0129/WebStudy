@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            /*
+            
+            1) 내부 전용 함수
+                중첩 함수는 함수내부의 지역변수처럼 함수 내부에서만 사용할 수 있습니다. 
+                즉, 함수 내부에서만 사용하는 기능을 중첩 함수로 만들어 사용하는 것이죠.
+                
+                 
+             예) 1초에 한번씩 "안녕하세요."를 출력해주세요.
+
+             */
+
+            function startHello() {
+                var count = 0;
+                setInterval(function() {
+                    count++;
+                    document.write(count + " 안녕하세요.", "<br>");
+                }, 1000)
+            }
+
+            startHello();
+
+        </script>
+
+    </head>
+
+    <body></body>
+</html>

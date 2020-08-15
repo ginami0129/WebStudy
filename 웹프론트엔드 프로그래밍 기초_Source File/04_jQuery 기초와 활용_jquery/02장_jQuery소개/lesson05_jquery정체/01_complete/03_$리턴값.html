@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title></title>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+
+             03. $()함수의 리턴값
+             $("div").css("border", "4px solid #f00");
+             위의 구문에서
+             
+                 - .은 부록01 초보자를위한 함수와클래스에서 배운것처럼
+                 특정 객체의 기능을 접근하는 접근연산자라고 했음
+    
+                 - 즉 $("div") 함수의 리턴값은 jQuery 객체가 됨
+    
+                 - 위의 코드를 풀어 작성하면 다음과 같음.
+                 var $divs = $("div");
+                 $divs.css("border", "4px solid #f00");
+                 0301_$함수리턴값.png
+
+                 - css() 메서드는?
+                 0302_jquery객체.png
+
+             */
+            
+            $(document).ready(function(){
+                var $divs = $("div");
+                 $divs.css("border", "4px solid #f00");
+           }) 
+
+        </script>
+    </head>
+    <body>
+
+        <div>div-data1</div>
+        <div>div-data2</div>
+        <div>div-data3</div>
+        <div>div-data4</div>
+        <p>p-data1</p>
+        <p>p-data2</p>
+        <p>p-data3</p>
+        <p>p-data4</p>
+    </body>
+  
+</html>

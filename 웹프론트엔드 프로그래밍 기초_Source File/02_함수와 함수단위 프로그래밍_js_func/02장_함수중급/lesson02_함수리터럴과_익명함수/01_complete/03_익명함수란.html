@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>    
+        <script>
+        /*
+            03. 익명 함수란?
+                함수 리터럴 방식으로 만들어진 이름 없는 함수를 말합니다.
+                이벤트 처리등에 익명 함수를 활용하면 다음과 같이 좀 더 간결하게 만들 수 있습니다.
+             
+         */
+            $(document).ready(function(){
+                // 익명함수 사용전
+                
+                function hello(){
+                    
+                    alert("안녕하세요. 환영합니다.");
+                }
+                $("#btnStart").click(hello);
+                
+                // 익명함수 사용후
+                $("#btnStart").click(function(){
+                    alert("안녕하세요. 환영합니다.");
+                });
+                
+           });
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <button id="btnStart">시작</button>
+        
+    </body>
+</html>

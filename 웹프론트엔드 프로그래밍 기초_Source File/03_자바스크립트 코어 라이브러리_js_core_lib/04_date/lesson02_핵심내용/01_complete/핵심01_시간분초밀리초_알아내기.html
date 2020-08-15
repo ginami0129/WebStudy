@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<style>
+			#output {
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				vertical-align: center;
+				border: 2px solid #000;
+			}
+		</style>
+
+		<script src="../../../libs/jquery-1.11.0.min.js"></script>
+		<script>
+			/*
+			 01 시간, 분, 초, 밀리초 알아내기
+			 ------------------------------------
+			 	Date의 getHours(), getMinutes(), getSeconds(), getMilliseconds()를 이용하면
+			 	 시간, 분, 초, 밀리초를 알아 낼 수 있습니다.
+			 
+			 1) getHours() 메서드 사용법
+				 문법:
+					 var hours = Date인스턴스.getHours();
+	
+				 매개변수:
+					없음
+	
+				 리턴 값:
+				 	0부터 23까지의 정수
+
+			 2) getMinutes() 메서드 사용법
+				 문법:
+				 	var minutes = Date인스턴스.getMinutes();
+	
+				 매개변수:
+					 없음
+	
+				 리턴 값:
+					 0부터 59까지의 정수
+
+			 3) getSeconds() 메서드 사용법
+				 문법:
+				 	var seconds = Date인스턴스.getSeconds();
+	
+				 매개변수:
+					 없음
+	
+				 리턴 값:
+					 0부터 59까지의 정수
+
+			 4) getMilliseconds() 메서드 사용법
+				 문법:
+				 	var mSeconds = Date인스턴스. getMilliseconds();
+	
+				 매개변수:
+				 	없음
+	
+				 리턴 값:
+					 0부터 999까지의 정수 값
+	
+	
+			 5)예제
+				 현재 시간의 시간, 분, 초, 밀리초를 #output에 출력 해주세요.
+
+			 */
+			$(document).ready(function() {
+				var $output = $("#output");
+
+				// 여기에 풀이를 입력해주세요.
+				var objDate = new Date();
+				var hours = objDate.getHours();
+				var minutes = objDate.getMinutes();
+				var seconds = objDate.getSeconds();
+				var millseconds = objDate.getMilliseconds();
+
+				$output.html(hours + ":" + minutes + ":" + seconds + "." + millseconds);
+			})
+
+		</script>
+
+	</head>
+
+	<body>
+		<div id="output">
+			여기에 시간 정보를 출력해주세요.
+		</div>
+	</body>
+</html>

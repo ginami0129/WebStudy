@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;	
+		}
+	
+		#panel{
+			width:600px;
+			overflow:visible;	
+			border: 1px dotted #CCC;
+            font-size:20px; 	
+		}
+		
+	</style>
+	<script  type="text/javascript" src="../../../libs/jquery-1.11.0.min.js"></script>
+	
+
+<script>    
+    var count =0;
+    var $panel =null;
+    //1. 시작이벤트 설정.
+    jQuery(document).ready(function(){
+        // 초기화.
+        init();
+        // 타이머 시작.
+        start();
+    });
+    
+    // 초기화.
+    function init(){
+        //2.  #panel Element 구하기.
+        $panel = $("#panel");
+    }
+    
+    // 타이머 시작.
+    function start(){
+        setInterval(addTag,20);
+    }
+    
+    // 태그 생성및 추가
+    function addTag(){
+        count++;
+        //3. span Element 생성.
+        var $span = $("<span></span>");
+        
+        // 스타일 값 생성하기       
+        var color = "#"+(parseInt(Math.random()*0xffffff)).toString(16);;
+        var fontSize = (10+parseInt(Math.random()*40))+"px";
+        
+        //4. css 스타일 설정.
+        $span.css({
+            color:color,
+            fontSize:fontSize,
+            display:"inline-block"
+        })
+        $span.html(count);
+        
+        //5. panel 엘러먼스테 새로 생성한 span 엘러먼트 추가하기.         
+        $panel.append($span);
+        
+        //6. 테스트용 구문, 추가되는 태그를 확인하기 위한 구문으로써 자동으로 body 높이 위치로 스크롤 시키기
+        this.window.scrollTo(0,window.document.body.scrollHeight);          
+    }
+</script>
+
+
+
+</head>
+
+<body>
+	<div> 
+		
+		<div id="panel">
+			
+		</div>
+	</div>       
+</body>
+</html>

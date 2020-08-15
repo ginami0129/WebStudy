@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        .select {
+            border:1px solid #000;
+        }
+    </style>
+    <script>
+        /*
+
+         02 jQuery를 이용한 노드 찾기
+            - $("선택자")
+            
+            - 선택자에는 여러분이 이미 알고 있는 CSS 선택자를 그대로 사용하면 됩니다.
+            예)
+                $("div")
+                $(".select")
+                $("div > p")
+                $("div ul li.select")
+                                  
+         */
+
+
+    </script>
+    
+    <script src="../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        // 예제 : li 태그 글자색을 빨간색으로 변경하기 
+        $(document).ready(function(){
+            $("#menu li").css("color","#f00");    
+        })
+        
+        // 예제 : select 선택자가 적용된 노드 지우기
+        $(document).ready(function(){
+            $("li.select").remove();
+        })
+        
+    </script>
+
+</head>
+
+<body>
+    <ul id="menu">
+        <li>menu1</li>
+        <li class="select">menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+</body>
+</html>

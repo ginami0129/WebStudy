@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+
+		<script>
+			/*
+			 03. 숫자 내림값, 올림값 구하기
+			 ------------------------------
+			 Math.floor() 메서드와 Math.ceil() 메서드를 이용하면 내림값과 올림값을 쉽게 구할 수 있습니다.
+			 1) Math.floor() 사용법
+				 문법:
+				 var result = Math.floor(num);
+	
+				 매개변수:
+				 	num : 실수값	
+				 리턴 값:
+				 	입력 값이 실수 인 경우 내림 한 정수 값
+	
+				 예:
+					 var num = Math.floor(10.2);
+					 alert(num)  // 10 출력
+					 var num = Math.floor(10.9);
+					 alert(num)  // 10 출력
+				 
+			 2) Math.ceil() 사용법
+				 문법:
+				 var result = Math.ceil(num);
+				 
+				 매개변수:
+				 	num : 실수값
+				 리턴 값:
+				 	입력 값이 실수 인 경우 올림 한 정수 값
+				 
+				 예:
+					 var num = Math.ceil(10.2);
+					 alert(num)  // 11 출력
+					 var num = Math.ceil(10.9);
+					 alert(num)  // 11 출력
+					 
+			 3) 예제
+				 다음에 등장하는 풀이 전 코드는 
+				 게시물에 따른 페이지수를 구하는 예제입니다.
+				 예를 들어 총 게시물이 105개 이고 한 페이지에 10개씩 출력 된다고 해보죠. 
+				 이때 페이지 수는 11페이지가 출력됩니다.
+				 여러분이 할 일은  Math.ceil() 또는 Math.floor()를 활용해 코드를 좀더 
+				 간결하게 만드는 작업 입니다.
+
+			 */
+			/*
+			var itemCount = 105;
+		    var pages = parseInt(itemCount/10);
+		    if(itemCount%10)
+		        pages++;
+		        
+		    alert(“전체 페이지 수는  = “+pages);   // 결과 11
+
+			 */
+			
+			var itemCount = 105;
+			var pages = Math.ceil(itemCount / 10);
+
+			alert("전체 페이지 수는  = " + pages);
+			// 결과 11
+		</script>
+
+	</head>
+
+	<body>
+
+	</body>
+</html>

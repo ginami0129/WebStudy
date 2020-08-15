@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>배너</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.banner {
+				width: 400px;
+				height: 200px;
+				position: absolute;
+				border: 2px solid #000;
+			}
+
+			#banner1 {
+				top: 100px;
+				left: 100px;
+			}
+
+		</style>
+		<script src="../../../../libs/jquery-1.11.0.min.js"></script>
+		<script>
+			/*
+
+			 미션02 심플 이미지 배너 만들기 ver 2.0
+
+			 다음 요구사항에 맞게 이미지 배너를 만들어 주세요.
+
+				 -기존 코드를 수정해 1초에 한번씩 배열에 들어 있는 이미지를
+				   랜덤순으로 전환되게 만들어주세요.
+
+			 */
+        $(document).ready(function(){
+            banner();
+        })  
+        
+        function banner(){
+        
+            var imgList = ["logo_01.jpg","logo_02.jpg","logo_03.jpg","logo_04.jpg","logo_05.jpg"];
+            var $banner = $("#banner1");
+            
+            // 여기에 풀이를 입력해주세요.
+            // 1초에 한번씩 함수 호출
+            setInterval(function(){
+                // 0에서 이미지 개수까지의 랜덤 인덱스 값  구하기
+		        var currentIndex =Math.floor(Math.random()*imgList.length);
+
+              
+                console.log("test ", currentIndex);
+                // 다음 이미지 이름 구하기     
+                var imgName = imgList[currentIndex];
+                // 다음 이미지 출력
+                $banner.attr("src", "./images/"+imgName);
+            },1000)
+        }
+    </script>	
+</head>
+
+<body>
+    <img src="images/logo_01.jpg" class="banner" id="banner1">
+</body>
+</html>

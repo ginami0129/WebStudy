@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        div, p, ul, li{
+            border:1px #eeeeee solid;
+            margin:10px;
+        }
+        ul {
+         padding:10px;
+        }
+        li.select {
+            background-color:#ccc;
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+        /*
+        핵심02-마지막 번째 자식 노드로 이동
+        사용법
+        $부모노드.append($이동노드);
+        $이동노드.appendTo($부모노드);
+        
+        append()와 appendTo()를 이용하면  아주 쉽게 기존 노드를 특정 노드의 마지막 자식 노드로 이동 시킬 수 있습니다. 
+        
+        예제 1  - 클릭한 메뉴 아이템을 최하위 메뉴 아이템으로 이동 해주세요.
+         */
+        $(document).ready(function(){    
+          var $menu = $("ul.menu");
+          
+          $("ul.menu li").click(function(){
+              $menu.append(this);
+          })
+        });
+
+
+
+    </script>
+</head>
+    
+<body>
+
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li class="select">menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+    </ul>        
+</body>
+
+</html>

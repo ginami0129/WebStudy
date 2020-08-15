@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    
+
+    <script>
+        /*
+          03 리턴 값으로 함수 사용하기
+        함수는 어떤 값(데이터)이든 리턴할 수가 있습니다. 
+        이는 리턴 값으로 함수를 리턴할 수가 있다는 의미이기도 합니다. 
+        다음 예제 처럼 말이지요.
+
+        */
+       
+        function createHello(){
+            
+            function hello(user){
+                document.write(user+"님 방문을 환영합니다.");
+            }
+            
+            return hello;
+        }
+        var result = createHello();
+        result("권기남");
+        
+        
+
+
+        
+
+
+
+
+    </script>
+
+</head>
+
+<body></body>
+</html>

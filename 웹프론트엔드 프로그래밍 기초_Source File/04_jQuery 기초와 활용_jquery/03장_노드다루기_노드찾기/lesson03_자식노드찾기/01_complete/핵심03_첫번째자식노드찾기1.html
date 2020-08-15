@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+
+             핵심03 - 첫 번째 자식 노드 찾기
+             사용법
+             - $대상.children().first();
+             - $대상.children ().eq(0);
+             - $대상.children(":first");
+             - $대상.children (":eq(0)");
+
+             첫 번째 자식 노드를 찾는 방법은 사용법에 나열돼 있는 것처럼 4가지 방법이 있습니다.
+             방법은 크게 선택자를 이용하는 방법과 메서드를 이용하는 방법 두 가지로 나눌 수 있습니다.
+
+             예제: ul.menu의 자식 노드 중 첫 번째 자식 노드(인덱스 값으로 0번째)의 border를 “4px solid #f00”으로 변경해주세요.
+
+             */
+            $(document).ready(function() {
+
+                var $menu = $("ul.menu");
+                $menu.children().first().css("border", "4px solid #f00");
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <div id="samplePage" class="page">
+            샘플 페이지(div, id=samplePage, class=page)
+            <div id="header" class="test1">
+                헤더 영역(div, id=header, class=test1)
+            </div>
+            <div id="content" class="sample-content">
+                노드 찾기(div, id=content, class=sample-content)
+                <ul class="menu">
+                    일반 노드 찾기(ul, class=menu)
+                    <li data-value="1">
+                        id로 찾기(li, data-value=1)
+                    </li>
+                    <li class="select">
+                        tag로 찾기(li, class=select)
+                    </li>
+                    <li data-value="2">
+                        class로 찾기(li, data-value=2)
+                    </li>
+                    <li class="test1">
+                        속성으로 찾기(li, class=test1)
+                    </li>
+                </ul>
+                <div class="content-data">
+                    자식 노드 찾기(div, class=content-data)
+                    <p class="test1">
+                        1. 모든 자식 노드 찾기(p, class=test1)
+                    </p>
+                    <p>
+                        2. 특정 자식 요소만 찾기(p)
+                    </p>
+                    <p class="test2">
+                        3. 마지막 자식 요소 찾기(p, class=test2)
+                    </p>
+                </div>
+            </div>
+            <div id="footer" class="test2">
+                푸터 영역(div, id=footer, class=test2)
+            </div>
+        </div>
+    </body>
+
+</html>

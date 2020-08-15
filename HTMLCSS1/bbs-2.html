@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>예제용 파일</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type='text/css'>
+		/* 스타일 */
+		body {
+			margin:0;
+			padding:0;
+		}
+		h1,h2 {
+			color:#ffffff;
+		}
+		a {
+			font-size:12px;
+			color:#000000;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		ul,li {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.clear {
+			clear:both;
+		}
+		.wrap {
+			width:960px;
+			margin:0 auto;
+			background: #eeeeee;
+		}
+		.header {
+			background: #888888;
+			padding:30px;			
+		}
+		.content {
+			padding:30px;
+		}
+		.footer  {
+			background: #333333;
+			height: 50px;
+			padding:20px;
+			font-size:14px;
+			font-weight:bold;
+			color:#ffffff;
+			text-align: center;
+		}
+
+		.logo {
+			float:left;
+			margin-right:20px;
+		}
+		.banner img {
+			width: 100%;
+		}
+
+		.view {
+			width:92%;
+			border:1px solid #bbbbbb;
+			min-height: 240px;
+			background:#ffffff;
+			padding: 4%;
+		}
+
+		.view .title {
+			font-size:14px;
+			font-weight: bold;
+		}
+		
+		.view .divider {
+			color:#666666;
+		}
+
+		.view .bbsLink a {
+			font-size:11px;
+			color:#666666;
+		}
+		.view .bbsLink a:hover {
+			text-decoration: none;
+			color:#ff4500;
+		}
+
+		.titleContainer {
+			padding-bottom:10px;
+			border-bottom:1px dashed #999999;
+		}
+
+		.view .titleRightBox {
+			font-size:11px;
+			color:#666666;
+			float:right;
+		}
+
+		.view .articleContainer p {
+			font-size:12px;
+			color:#333333;
+			line-height: 20px;
+		}
+
+		.view .articleContainer a {
+			font-size:12px;
+			color:#333333;
+		}
+		.view .articleContainer a:hover {
+			text-decoration: none;
+			color:#ff4500;
+		}
+
+		.view .articleContainer img {
+			max-width:100%;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+
+		.view .profileContainer {
+			float:right;
+			margin-top:50px;
+			width:40%;
+		}
+
+		.view .profileContainer table {
+			border-spacing: 0;
+			width:100%;
+		}
+
+		.view .profileContainer img {
+			width:100px;
+		}
+
+		.view .profileContainer .blogLink {
+			vertical-align: top;
+			text-align: right;
+			padding-right:10px;
+		}
+
+		.view .profileContainer .utilBtn a {
+			font-size:12px;
+		}
+
+		.view .profileContainer .utilBtn td {
+			border-bottom:1px solid #aaaaaa;
+			text-align: right;
+			font-size:12px;
+			padding-bottom:10px;
+		}
+
+		.view .profileContainer .blogBox td {
+			padding-top:15px;
+		}
+
+		.view .profileContainer .imageBox {
+			width:100px;
+		}
+
+		.view .commentContainer {
+			width:92%;
+			min-height:100px;
+			background:#dddddd;
+			margin-top:50px;
+			padding:4%;
+		}
+
+		.view .commentContainer table {
+			width:100%;
+		}
+		.view .commentContainer .cmt_re_table .cmt_icon{
+			width:32px;
+		}
+		.view .commentContainer .cmt_re_table table {
+			width:96%;
+			float:right;
+		}
+		.view .commentContainer .cmt_author {
+			font-size:12px;
+			font-weight: bold;
+			margin-right:10px;
+		}
+
+		.view .commentContainer .cmt_date {
+			font-size:12px;
+			color:#666666;
+		}
+
+		.view .commentContainer .cmt_reply {
+			font-size:12px;
+			font-weight: bold;
+			margin-left:10px;
+			padding-left:15px;
+			background:url("img/cmtreply.png") no-repeat;
+		}
+
+		.view .commentContainer .cmt_icon {
+			width:20px;
+		}
+
+		.view .commentContainer .cmt_util {
+			text-align: right;
+		}
+
+		.view .commentContainer p {
+			font-size:12px;
+			color:#666666;
+		}
+
+		.view .commentContainer ul li {
+			border-bottom: 1px solid #cccccc;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		.view .commentContainer .cmtWriteContainer {
+			padding-top:30px;
+		}
+		.view .commentContainer .cmtWriteContainer textarea {
+			width:75%;
+			height:50px;
+			font-size:12px;
+			padding:10px;
+		}
+
+		.view .commentContainer .cmtWriteContainer .cmtWriteBtn {
+			width:16%;
+			height:16px;
+			display: inline-block;
+			background:#eeeeee;
+			border:1px solid #dddddd;
+			padding:28px 20px;
+			text-align: center;
+			float:right;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<div class="logo"><img src="img/logo.png"></div>
+			<h1>CSS활용강의</h1>
+			<h2>게시판만들기</h2>
+		</div>
+		<div class="content">
+			<div class="view">
+				<div class="titleContainer">
+					<span class="title">폼을 이용한 글쓰기 입력 페이지 구성</span>					
+					<span class="divider">|</span>
+					<span class="bbsLink"><a href="#">자유게시판</a></span>
+
+					<span class="titleRightBox">
+						<span class="titleDate">2015.5.10</span>
+						<span class="divider">|</span>						
+						<span class="bbsLink"><a href="#">삭제</a></span>
+					</span>
+					<div class="clear"></div>
+				</div>
+				<div class="articleContainer">
+					<p>정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다. 
+					<p>이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 대통령은 헌법과 법률이 정하는 바에 의하여 공무원을 임면한다. 
+					</p>
+					<p>모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.</p>
+
+					<a href="#">http://www.daum.net</a>
+
+					<img src="img/bg1.jpg">
+					<img src="img/bg2.jpg">
+				</div>
+				<div class="profileContainer">
+					<table>
+						<tbody>
+							<tr class="utilBtn">
+								<td colspan="2">글쓴이의 게시글 구독하기 <span class="divider">|</span> <a href="#">더보기</a></td>
+							</tr>
+							<tr class="blogBox">
+								<td class="blogLink"><a href="">Writer's Blog</a></td>
+								<td class="imageBox"><img src="img/profile1.jpg"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="clear"></div>
+				<div class="commentContainer">
+				<ul>
+					<li>
+						<table>
+						<tbody>
+						<tr>
+							<td class="cmt_icon"><img src="img/icon1.png"></td>
+							<td><a class="cmt_author" href="">홍길동</a><span class="cmt_date">2015.5.10 10:30</span><a class="cmt_reply" href="">답글</a></td>
+							<td class="cmt_util">
+								<a href="">신고</a><span class="divider">|</span>
+								<a href="">삭제</a>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2">
+								<p>
+									국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다. 국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.
+
+	국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+								</p>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</li>
+					<li>
+						<table>
+						<tbody>
+						<tr>
+							<td class="cmt_icon"><img src="img/icon1.png"></td>
+							<td><a class="cmt_author" href="">홍길동</a><span class="cmt_date">2015.5.10 10:30</span><a class="cmt_reply" href="">답글</a></td>
+							<td class="cmt_util">
+								<a href="">신고</a><span class="divider">|</span>
+								<a href="">삭제</a>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2">
+								<p>
+									국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다. 국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.
+
+	국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+								</p>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</li>	
+					<li class="cmt_re_table">
+						<table>
+						<tbody>
+						<tr>
+							<td class="cmt_icon"><img src="img/iconarrow.png"><img src="img/icon1.png"></td>
+							<td><a class="cmt_author" href="">홍길동</a><span class="cmt_date">2015.5.10 10:30</span><a class="cmt_reply" href="">답글</a></td>
+							<td class="cmt_util">
+								<a href="">신고</a><span class="divider">|</span>
+								<a href="">삭제</a>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2">
+								<p>
+									국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다. 국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.
+
+	국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+								</p>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+						<div class="clear"></div>
+					</li>	
+
+					<li class="cmt_re_table">
+						<table>
+						<tbody>
+						<tr>
+							<td class="cmt_icon"><img src="img/iconarrow.png"><img src="img/icon1.png"></td>
+							<td><a class="cmt_author" href="">홍길동</a><span class="cmt_date">2015.5.10 10:30</span><a class="cmt_reply" href="">답글</a></td>
+							<td class="cmt_util">
+								<a href="">신고</a><span class="divider">|</span>
+								<a href="">삭제</a>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2">
+								<p>
+									국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다. 국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.
+
+	국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+								</p>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+						<div class="clear"></div>
+					</li>		
+				</ul>
+				<div class="cmtWriteContainer">
+					<textarea></textarea>
+					<a class="cmtWriteBtn" href="">댓글입력</a>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<span>2015.CSS활용강좌 All rights reserved.</span>
+		</div>
+	</div>
+</body>
+</html>

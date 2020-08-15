@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>예제</title>
+
+    <script>
+        /*
+
+         03. 지역변수와 전역변수 생명주기
+
+         1) 전역변수
+             - 전역변수의 생명주기(변수를 사용할 수 있는 기간)는 
+             자바스크립트가 실행되는 페이지가
+             브라우저에서 실행되고 있는 한 사라지지 않고 계속 남아있게 됩니다.
+             - 어디서든 전역변수를 사용할 수가 있습니다.
+
+         2) 지역변수
+             - 함수 내부는 오직 함수 호출을 해야 동작하며
+             자바스크립트 엔진에 의해 var가 해석이 되면서 지역변수가 만들어짐.
+             - 지역변수는 함수 내부의 구문실행이 모두 끝나는(“}”가 실행되는)
+             시점에 전역변수와는 달리 완전히 사라지게 됩니다.
+             - 지역변수는 전역변수와는 달리 변수가 만들어진 지역에서만 사용할 수 있습니다.
+
+         */
+
+        function func1() {
+            var name = "ddandongne";
+            document.write("1. name = " + name);
+        }
+
+        func1();
+
+        // name은 지역변수이기 때문에 전역에서 사용할 수 없어요.
+        document.write("2. name = " + name);
+        /*
+         실행 결과:
+             1. name = ddandongne
+             2. name = undefined
+         */
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>

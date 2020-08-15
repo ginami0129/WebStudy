@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    
+
+    <script>
+        /*
+            
+            02. 매개변수 값으로 함수 사용하기
+                
+                - 매개변수 값으로도 함수를 사용할 수 있습니다.
+                
+             예제) execute() 함수를 만든 후 hello1과 hello2 함수를 
+             execute() 함수의 매개변수 값으로 넘겨 
+             execute() 함수 내부에서 실행해주세요.
+
+        */
+       
+       function hello1(){
+            alert("hello.");
+        }
+        function hello2(){
+            alert("안녕하세요.");
+        }
+        
+        function execute(func){
+            func();
+        }
+        
+        execute(hello1);
+        execute(hello2);
+        
+
+        
+
+
+
+
+    </script>
+
+</head>
+
+<body></body>
+</html>

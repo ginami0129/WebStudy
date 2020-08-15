@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+    <script>
+        /*
+         예제 03: 1초마다 한번씩 배경색을 랜덤 하게 변경해주세요.
+         
+         무작성 따라하기
+         */
+        $(document).ready(function() {
+          
+            setInterval(function() {
+              var color = Math.random() * 0xffffff;
+              color = parseInt(color);
+              color = color.toString(16);
+
+              $("body").css("background-color", "#"+color);
+            }, 1000)
+
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>

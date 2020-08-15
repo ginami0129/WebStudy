@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<style>
+			#clock {
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				vertical-align: center;
+				border: 2px solid #000;
+			}
+		</style>
+
+		<script src="../../../../libs/jquery-1.11.0.min.js"></script>
+		<script>
+			/*
+			 미션02: 이번 미션은 전자 시계를 만드는 것입니다.
+				 - 미션01을 수정해 시간을 다음과 같이 출력해주세요.
+				 -  2:3.5 -> 02:03.05
+
+			 */
+			var $clock = null;
+			$(document).ready(function() {
+				$clock = $("#clock");
+
+				// 시간 출력 함수 호출
+				clock();
+
+			});
+
+			function clock() {
+				// 여기에 풀이를 입력해주세요.
+        function addZero(value) {
+          if (value < 10) {
+            value ="0"+value;
+          }
+          return value;
+        }
+
+				// 현재 시간 출력
+				function showTime() {
+					var objDate = new Date();
+					var hours = addZero(objDate.getHours());
+					var minutes = addZero(objDate.getMinutes());
+					var seconds = addZero(objDate.getSeconds());
+
+					var time = hours + ":" + minutes + ":" + seconds;
+					$clock.html(time);
+				}
+
+				// 시작하자마 시간 출력
+				showTime();
+
+				// 0.5초마다 시간 출력
+				setInterval(function() {
+
+					showTime();
+
+				}, 500)
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+		<div id="clock">
+			00:00.00
+		</div>
+	</body>
+</html>

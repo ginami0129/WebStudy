@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+			font-family:"굴림";		
+		}
+		div, p{
+			border:1px #eeeeee solid;
+			margin:10px;
+		}
+		
+		/* 
+		 
+		 미션1 :
+		 	 CSS를 이용해서 문서 내용중 p요소를 모두 찾아서 
+		 	 border : 4px solid #ff000으로 표현해주세요.
+		 
+		 미션2 :
+		 	CSS를 이용해서 문서 내용중 data_2 클래스가 적용된 요소를 모두 찾아서
+		 	 border : 4px solid #ff000으로 표현해주세요. 	 		 	  
+		 
+		 미션3 :
+		 	CSS를 이용해서 id가 content인 요소를 찾아서 
+		 	border : 4px solid #ff0000으로 표현해주세요.
+		 
+		 */
+		
+		
+		/*  소스를 여기에 입력해주세요. */
+		p {
+			border : 4px solid #ff0000;
+		}
+			
+	</style>
+	
+	
+</head>
+	
+<body>
+	<div id="sample_page" class="page" >
+		샘플 페이지(div, id=sample_page, class=page)
+		<div id="header">				
+			헤더 영역(div, id=header)
+		</div>
+		<div id="content" class="sample_content">			
+			<div> 				
+				<p class="data_1">1. 자바스크립트 Core(p, class=data_1)</p>
+				<p class="data_2">2. 자바스크립트  BOM(p, class=data_2)</p>
+				<p class="data_3">3. 자바스크립트 DOM(p, class=data_3)</p>
+			</div>
+			<div class="content_data1">
+				자바스크립트에서 배울 내용(div, class=content_data1)
+				<div class="data_1">1. 자바스크립트 DOM(div, class=data_1)</div>
+				<div class="data_2">2. 자바스크립트 Ajax(div, class=data_2)</div>
+			</div>				
+			<div class="content_data2">
+				jQuery에서 배울 내용(div, class=content_data2)
+				<p>1. jQuery DOM(p)</p>
+				<p>2. jQuery Ajax(p)</p>
+			</div>
+			
+			<p class="data_1">1. HTML5(p, class=data_1)</p>
+			<p class="data_2">2. CSS3(p, class=data_2)</p>
+							
+		</div>
+		<div id="footer">				
+			푸터 영역(div, id=footer)
+		</div>	
+		
+		<ul>
+			메뉴(ul)
+			<li><p class="data_1">menu1(p, class=data_1)</p> </li>
+			<li><p class="data_2">menu2(p, class=data_2)</p> </li>
+			<li><p class="data_3">menu3(p, class=data_3)</p> </li>
+		</ul>	
+	</div>	
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <style>
+      body {
+        font-size: 9pt;
+      }
+
+      #panel {
+        width: 600px;
+        overflow: visible;
+        border: 1px dotted #ccc;
+        font-size: 20px;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="../../../libs/jquery-1.11.0.min.js"
+    ></script>
+    <script>
+      /*
+       미션02:
+       이번 미션은 다음 실행화면처럼 1초에 한 번씩 신규 노드를 생성한 후
+       글자 크기와 색이 랜덤하게 적용해 패널(#panel)의 자식 노드로 추가하는 것입니다.
+
+       1. 1초에 한번씩 <span>숫자</span> 태그를 생성해 패널(#panel)에 자식 노드로 추가해주세요.
+       2. 숫자는 1부터 시작 합니다.
+       3. 글자크기는 10px에서 50px 사이의 값으로, 글자색은 랜덤하게 설정해주세요.
+
+       */
+       var $panel = null;
+       var count = 0;
+      jQuery(document).ready(function() {
+          // 여기에  풀이를 작성해주세요.
+          init();
+          start();
+      });
+
+
+      function init() {
+        $panel = $("#panel");
+        count = 0;
+      }
+      function start() {
+        setInterval(function(){
+          addTag();
+        }, 500);
+      }
+      function addTag() {
+        ++count;
+        var $span = $("<span></span>");
+        $span.html(count);
+
+        var color = "#" + parseInt(Math.random()*0xFFFFFF).toString(16);
+        var fontSize = Math.random()*40 + 10;
+
+        $span.css({
+          color: color,
+          fontSize: fontSize,
+          display: "inline-block"
+        });
+        $panel.append($span);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="panel">
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             핵심02-다음 형제 노드 찾기
+             사용법:
+             $대상.next();
+             $대상.nextAll(["선택자"]);
+
+             next() 메서드는 prev() 메서드와 반대되는 메서드로서 
+             특정 노드의 바로 다음에 있는 형제 노드를 찾고 싶을때 사용합니다.
+
+             예제1: 실행화면처럼 메뉴 항목에서 select 클래스가 적용된 노드의
+             바로 뒤의 다음 노드(menu4)를 찾아 border를 “4px solid #f00” 값으로 변경해주세요.
+
+             */
+            $(document).ready(function() {
+                var $select = $("ul.menu li.select");
+               $select.next().css("border", "4px solid black");
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <ul class="menu">
+            <li>
+                menu1
+            </li>
+            <li>
+                menu2
+            </li>
+            <li class="select">
+                menu3
+            </li>
+            <li>
+                menu4
+            </li>
+            <li>
+                menu5
+            </li>
+            <li>
+                menu6
+            </li>
+        </ul>
+    </body>
+
+</html>

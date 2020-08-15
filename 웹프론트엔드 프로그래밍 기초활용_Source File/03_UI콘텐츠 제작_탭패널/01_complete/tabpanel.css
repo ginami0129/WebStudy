@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* CSS Document */
+body
+{
+
+	font-size:20px;
+	
+	color:#000;
+	
+	background:url("./images/bg.png") no-repeat;
+}
+
+
+
+a:link {text-decoration:none; color:#000;}
+a:visited {text-decoration:none; color:#000;}
+a:active {text-decoration:none; color:#000;}
+a:hover {text-decoration:none; color:#000;}
+
+
+
+
+/* 메뉴 정의 */
+div.tab-panel{
+	
+	height:45px;
+	position: relative;
+	left:100px;
+	top:100px;
+	
+}
+
+div.tab-panel .tab-menu{
+	
+	margin-left:60px;
+}
+
+
+
+
+
+div.tab-panel .tab-menu ul{
+	height:44px;
+	list-style: none;	
+	
+	margin:0;
+	padding:0;
+	
+	
+}
+
+
+div.tab-panel .tab-menu ul li.tab-item{
+	background:no-repeat left:0 top:0;
+	position: relative;
+	height:30px;
+	width:99px;		
+	float: left;
+	background-image:url("./images/tab_resource.png");
+	
+	
+}
+
+div.tab-panel .tab-menu ul li:hover
+{
+	background-position-y: -43px;
+}
+div.tab-panel .tab-menu ul li.over  {
+	background-position-y: -43px;
+}
+
+div.tab-panel .tab-menu ul li.select  {
+	background-position-y: -86px;
+		
+	z-index: 100;
+	height:44px;
+	margin-top:-5px;
+}
+
+
+div.tab-panel .tab-menu ul li a {
+	width:100%;
+	display:block;
+	
+	text-align: center;
+	margin-top:3px;
+}
+
+
+
+
+
+
+div.tab-panel .tab-contents {
+	background:url(./images/content_bg.png) no-repeat;
+	width:777px;
+	height:338px;
+	margin-top:-18px;
+	position: relative;
+	z-index: 50;
+	padding:30px;
+}
+
+div.tab-panel .tab-contents div{
+	position: absolute;
+	left:50px;
+	top:50px;
+	opacity:0;
+}
+
+
+#tabPanel2 {
+	top:600px;
+}
+

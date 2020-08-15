@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <style>
+        body {
+            font-size: 9pt;
+        }
+
+    </style>
+
+    <script src="../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            //#menu 노드 찾기
+            var menu = document.getElementById("menu");
+            // li 리스트 구하기
+            var liList = menu.getElementsByTagName("li");
+            // li 개수만큼 루프 돌며 스타일 변경
+            for (var i = 0; i < liList.length; i++) {
+                // n번째 li접근
+                var li = liList[i];
+                // 스타일 변경
+                li.style.color = "#f00";
+            }
+        })
+
+    </script>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>  
+    </ul>       
+</body>
+
+</html>

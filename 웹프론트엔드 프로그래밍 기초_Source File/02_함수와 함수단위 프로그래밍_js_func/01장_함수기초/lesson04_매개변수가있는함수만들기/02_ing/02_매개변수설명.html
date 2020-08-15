@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>예제</title>
+
+    <script>
+        /*
+
+         01. 매개변수란?
+            -매개변수는 변수의 일종이며 함수 외부에서 
+              함수 내부로 데이터를 전달할 때 매개체 역할을 하는 변수입니다.
+
+         02. 매개변수가 필요한 이유
+             1) 질문:  다음과 같이 출력되는 간단한 예제를 하나 만든다고 보죠.
+                 출력결과:
+                 웹동네님 환영합니다.
+                 딴동네님 환영합니다.
+                 짱아님 환영합니다.
+        
+                 그리고 풀이를 위해 코드를 다음과 같이 만들었습니다.
+                 function hello(){
+                     var name ="웹동네";
+                     document.write(name+"님 환영합니다.");
+                 }
+                 hello();
+                 hello();
+                 hello();
+
+         2) 해결방법은?
+             실행시점에 hello() 함수 내부에서 들어있는 
+             지역변수 name값을 "딴동네"와 "짱아"로 변경해야함.
+             하지만
+             0201_함수내부와외부.png 파일과 같이 
+             함수 외부에서 함수 내부의 name값을 직접 접근할 수 없음.
+
+         3) 결론:
+             0202_hello_매개변수추가_다이어그램.png과 같이 hello() 함수에 매개변수를 추가
+             0203_hello_매개변수추가_소스.png
+
+         */
+
+        function hello(value) {
+            var name = value;
+            document.write(name + "님 환영합니다.");
+        }
+
+        hello("웹동네");
+        hello("딴동네");
+        hello("짱아");
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

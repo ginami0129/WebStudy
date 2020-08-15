@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Untitled Document</title>
+
+    <script type="text/javascript">
+        /*
+
+         Lesson 03 while에서 continue문과 break;문
+
+         01 continue문
+             continue문은 반복 실행 중 특정 조건의 경우 실행구문을 실행하지 않고 다음 루프로 이동하게 하는 제어문 입니다.
+             예제를 이용해 자세히 살펴보죠.
+
+         예제: 다음 구문을 실행하면 화면에는 어떤 값이 출력될까요?
+         */
+
+        var i = 1;
+        var i = 1;
+        while (i <= 10) {
+            i++;
+            continue;
+
+            document.write(i + "<br>");
+        }
+
+        document.write("최종 i=" + i + "<br>");
+        //❶
+
+        /*
+         실행 결과:
+         최종 i=11
+         */
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>

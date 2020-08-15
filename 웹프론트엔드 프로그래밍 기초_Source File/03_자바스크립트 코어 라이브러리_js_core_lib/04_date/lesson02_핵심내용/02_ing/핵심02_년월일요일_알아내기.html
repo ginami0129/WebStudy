@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<style>
+			#output {
+				width: 400px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				vertical-align: center;
+				border: 2px solid #000;
+			}
+		</style>
+
+		<script src="../../../libs/jquery-1.11.0.min.js"></script>
+		<script>
+			/*
+			 02 년 월 일 요일 알아내기
+			 ------------------------------------
+			 	Date의getFullYear(), getMonth(), getDate(), getDay()를 이용하면 년, 월, 일, 요일을 알아 낼 수 있습니다.
+			 
+			 1) getFullYear() 메서드 사용법
+				 문법:
+				 	var year = Date인스턴스.getFullYear();
+	
+				 매개변수:
+				 	없음
+	
+				 리턴 값:
+				 	네 자리 숫자로 된 연도 값
+				 
+			 2)getMonth() 메서드 사용법
+				 문법:
+				 	var month = Date인스턴스.getMonth();
+	
+				 매개변수:
+				 	없음
+	
+				 리턴 값:
+				 	0(1월)부터 11(12월)까지의 정수 값
+				 
+			 3) getDate() 메서드 사용법
+				 문법:
+				 	var date = Date인스턴스.getDate();
+	
+				 매개변수:
+				 	없음
+	
+				 리턴 값:
+				 	날짜(일)를 나타내는 1에서 31까지의 정수
+				 
+			 4) getDay() 메서드 사용법
+				 문법:
+					 var day = Date인스턴스.getDay();
+	
+				 매개변수:
+					 없음
+	
+				 리턴 값:
+					 0(일)부터 6(토)까지의 정수 값
+					 
+			 5)예제
+			 	년, 월, 일, 요일을 실행화면처럼 #info에 출력 해주세요.
+
+			 */
+			$(document).ready(function() {
+				var $output = $("#output");
+				// 여기에 풀이를 입력해주세요.
+				var objDate = new Date();
+
+				// 년 구하기
+        var year = objDate.getFullYear();
+
+				// 월 구하기
+        var month = objDate.getMonth();
+
+				// 일 구하기
+        var date = objDate.getDate();
+
+				// 요일 구하기
+        var day = objDate.getDay();
+        var aryDay =["일","월","화","수","목","금","토","일"];
+				// 년, 월, 일, 요일 출력
+        $output.html(year+"년"+month+"월"+date+"일"+aryDay[day]+"요일");
+
+
+			})
+
+		</script>
+
+	</head>
+
+	<body>
+		<div id="output">
+			여기에 날짜 정보를 출력해주세요.
+		</div>
+	</body>
+</html>

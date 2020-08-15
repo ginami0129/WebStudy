@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>예제</title>
+
+    <script>
+        /*
+
+        04. return문의 또다른 기능
+            return문은 함수 내부의 데이터를 함수를 호출한 곳으로 전달할 때도 사용하지만
+            함수를 즉시 빠져 나오는 기능도 합니다.
+
+          예제: 숫자를 계속해서 입력받은 수를 계속해서 더해 
+          화면에 출력하는 함수 sample()을 만들어 주세요.
+          단, 입력 값이 0이면 즉시 식행을 멈춰 주세요.
+        
+        */
+
+        // 여기에 소스를 입력해주세요.
+
+        function sample() {
+            var sum = 0;
+            var count = 1;
+
+            // 무한루프 시작
+            while (true) {
+                var value = parseInt(window.prompt("수 입력", 1));
+                if (value == 0) {
+                    document.write("종료 합니다.");
+
+                    //함수 탈출
+                    return;
+                }
+
+                // 입력 값 더하기
+                sum += value;
+
+                // 입력 값 출력 하기
+                document.write(count + ". " + sum + "<br>");
+            }
+
+            document.write("총 " + count + "번 실행했습니다.");
+        }
+
+        // 함수 호출
+        sample();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+</html>

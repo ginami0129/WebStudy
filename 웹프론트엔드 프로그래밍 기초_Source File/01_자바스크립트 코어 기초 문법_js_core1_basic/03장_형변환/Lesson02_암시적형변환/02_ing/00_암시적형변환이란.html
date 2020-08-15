@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script>
+        /*
+
+         Lesson 02 암시적형변환
+
+         01. 뜻
+             암시적 형변환이란 자바스크립트에 의해 자동으로 형변환이 일어나는 것을 말합니다.
+             좀더 풀어서 설명하면 여러분이 형변환을 하기 싫어도 또는 하라고도 안 했는데
+             자바스크립트는 여러분의 동의 없이 강제적으로(암암리에, 쥐도 새도 모르게) 형변환을 해 버립니다.
+
+         02. 암시적 형변환 규칙
+             1) 숫자 형+문자 형 => 문자형, var a = 10+"10"  // a는 문자 ”1010”
+             2) 불린 형+문자 형 => 문자형, var a = true+"10"   // a는 문자 “true10”
+             3) 불린 형+숫자 형 => 수자형, var a = true+10 // a는 숫자 11
+
+         03. 예
+            다음 예제와 같이 숫자 + 문자 인 경우 자동으로 문자로 형변환
+         */
+
+        var result = 1 + "2";
+        // 자동으로 암시적형변환이 일어남
+        document.write("result=" + result);
+
+    </script>
+</head>
+
+<body></body>
+</html>
