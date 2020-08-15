@@ -31,7 +31,7 @@
         left: 100px;
       }
       #scroller1 .content {
-        width : 400px;
+        width: 400px;
       }
       #scroller2 {
         top: 150px;
@@ -43,66 +43,73 @@
     <script src="../libs/jquery-1.11.0.min.js"></script>
     <script>
       /*
-			미션 : 텍스트 스크롤러 만들기
+      미션 : 텍스트 스크롤러 만들기
 
-			01. 미션소개 및 미리보기
-				step04.html 파일 열기
+      01. 미션소개 및 미리보기
+      	step04.html 파일 열기
 
-			02. 요구사항
-				1) 텍스트를 우에서 좌로 계속해서 스크롤 되게 해주세요.
-				단, 우에서 좌로 스크롤이 모두 끝난 경우 다시 우에서 좌로 스크롤 되게 해주시면 됩니다.
-				2) 함수 하나로 여러개의 스크롤이 가능하게 만들어주세요.
+      02. 요구사항
+      	1) 텍스트를 우에서 좌로 계속해서 스크롤 되게 해주세요.
+      	단, 우에서 좌로 스크롤이 모두 끝난 경우 다시 우에서 좌로 스크롤 되게 해주시면 됩니다.
+      	2) 함수 하나로 여러개의 스크롤이 가능하게 만들어주세요.
 
-			03.  화면 구성
-				step0001_화면구성.png
+      03.  화면 구성
+      	step0001_화면구성.png
 
-			힌트 :
-				- 우에서 좌로 스크롤 하는 방법
-				$대상.css("left",위치값)
-	
-				-현재 너비값 구하기.
-				$대상.outerWidth()  <- 주의! 이 값은 px가 붙은 문자열이 아닌 숫자값임.
+      힌트 :
+      	- 우에서 좌로 스크롤 하는 방법
+      	$대상.css("left",위치값)
 
-			04. 구현순서
-			
-				step #03
-				- 옵션 적용하기
-					- 선택자
-					- 속도 설정
-	
-				step #02
-					- 자동 스크롤 기능 만들기
-	
-				step #01
-					- 특정 위치로 텍스트 이동 하는 기능 만들기
-	
-				step #00
-					- 레이아웃 제작
-			*/
+      	-현재 너비값 구하기.
+      	$대상.outerWidth()  <- 주의! 이 값은 px가 붙은 문자열이 아닌 숫자값임.
+
+      04. 구현순서
+
+      	step #03
+      	- 옵션 적용하기
+      		- 선택자
+      		- 속도 설정
+
+      	step #02
+      		- 자동 스크롤 기능 만들기
+
+      	step #01
+      		- 특정 위치로 텍스트 이동 하는 기능 만들기
+
+      	step #00
+      		- 레이아웃 제작
+      */
       $(document).ready(function () {
-        init();
-        textScroller($content1, 10);
-        textScroller($content2, 1);
+        textScroller("#scroller1", 10);
+        textScroller("#scroller2", 50);
       });
-      function init() {
-        $content1 = $("#scroller1 div.content");
-        $content2 = $("#scroller2 div.content");
-        $content1.css("left", $content1.parent().outerWidth());
-        $content2.css("left", $content2.parent().outerWidth());
-      }
 
-      function textScroller($content, speed) {
-        var left = $content.parent().outerWidth();
-        setInterval(function () {
-          $content.css("left", left);
-          --left;
-          checkleft();
-        }, speed);
-        function checkleft() {
-          if (left < -1 * $content.outerWidth()) {
-            left = $content.parent().outerWidth();
-          }
+      function textScroller(selector, speed) {
+        var $container = null;
+        var $content = null;
+        var startPosX = 0;
+        var currentPosX = 0;
+        var endPosX = 0;
+        function init() {
+          $container = $(selector);
+          $content = $container.find(".content");
+          startPosX = $container.outerWidth();
+          endPosX = -1 * $content.outerWidth();
+          currentPosX = startPosX;
+          setPosition(startPosX);
         }
+        function setPosition(pos) {
+          $content.css("left", pos);
+        }
+        function autoPlay() {
+          setInterval(function() {
+            currentPosX -= speed;
+            setPosition(currentPosX);
+            if (currentPosX < endPosX) currentPosX = startPosX;
+          }, 40);
+        }
+        init();
+        autoPlay();
       }
     </script>
   </head>
