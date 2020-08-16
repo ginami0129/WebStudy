@@ -1,123 +1,150 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Untitled Document</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Untitled Document</title>
 
-		<link rel="stylesheet" type="text/css" href="tabpanel.css">
+    <link rel="stylesheet" type="text/css" href="tabpanel.css" />
 
-		<script src="../libs/jquery-1.11.0.min.js"></script>
-		<script src="../libs/jquery.easing.1.3.js"></script>
+    <script src="../libs/jquery-1.11.0.min.js"></script>
+    <script src="../libs/jquery.easing.1.3.js"></script>
 
-		<script>
-			/*
-			미션:탭패널 만들기
-			
-			01. 미션소개 및 미리보기				
-				- step05.html
-				 
-			02. 요구사항
-				- 일반적인 탭패널 만들기 
-				- 함수 단위로 만들기
-				- 함수 하나로 여러개의 탭패널 동작 가능하게 만들기 
-				- 시작시 n번째 탭패널 선택가능해야함
-				
-			03. 화면 구성
-				- step0001_화면설명.png
-				- step0002_화면구성.png
-				- step0003_화면구성_탭메뉴구조.png
-				- step0004_화면구성_탭내용_구조.png
-				
-			04. 구현순서 
-				- step #05
-					- 옵션값 처리 
-						- 선택자
-						- 시작시 초기 index 값  
-				- step #04
-					- 초기 시작시 애니메이션 효과 없이 탭 내용 활성화  
-					
-				- step #03
-					- 탭메뉴 선택시 탭내용 활성화
-					- 시작시 0번째 탭메뉴및 탭내용 활성화 
-					
-				- step #02
-					- 탭메뉴 선택처리를 리팩토링
-					- index값으로 탭메뉴 선택 처리 
-				- step #01
-					- 탭메뉴 제작
-			
-			 */
-			$(document).ready(function() {
-				
-				
-			})
-		
-		</script>
+    <script>
+      /*
+      미션:탭패널 만들기
 
-	</head>
+      01. 미션소개 및 미리보기
+      	- step05.html
 
-	<body>
-		<div class="tab-panel" id="tabPanel1">
-			<div class="tab-menu">
-				<ul>
-					<li class="tab-item">
-						<a href="#">google</a>
-					</li>
-					<li class="tab-item">
-						<a href="#">facebook</a>
-					</li>
-					<li class="tab-item">
-						<a href="#">pinterest</a>
-					</li>
-					<li class="tab-item">
-						<a href="#">twitter</a>
-					</li>
-					<li class="tab-item">
-						<a href="#">path</a>
-					</li>
-				</ul>
-			</div>
+      02. 요구사항
+      	- 일반적인 탭패널 만들기
+      	- 함수 단위로 만들기
+      	- 함수 하나로 여러개의 탭패널 동작 가능하게 만들기
+      	- 시작시 n번째 탭패널 선택가능해야함
 
-			<div class="tab-contents">
-				<div><img src="./images/content_google.png" >
-				</div>
-				<div><img src="./images/content_facebook.png" >
-				</div>
-				<div><img src="./images/content_pinterest.png" >
-				</div>
-				<div><img src="./images/content_twitter.png" >
-				</div>
-				
-				<div><img src="./images/content_path.png" >
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="tab-panel" id="tabPanel2">
-			<div class="tab-menu">
-				<ul>
-					
-					<li class="tab-item">
-						<a href="#">facebook</a>
-					</li>
-					<li class="tab-item">
-						<a href="#">pinterest</a>
-					</li>
-					<li class="tab-item">
-						<a href="#">twitter</a>
-					</li>					
-				</ul>
-			</div>
+      03. 화면 구성
+      	- step0001_화면설명.png
+      	- step0002_화면구성.png
+      	- step0003_화면구성_탭메뉴구조.png
+      	- step0004_화면구성_탭내용_구조.png
 
-			<div class="tab-contents">
-				<div><img src="./images/content_facebook.png" >
-				</div>
-				<div><img src="./images/content_pinterest.png" >
-				</div>
-				<div><img src="./images/content_twitter.png" >
-				</div>
-			</div>
-		</div>
-	</body>
+      04. 구현순서
+      	- step #05
+      		- 옵션값 처리
+      			- 선택자
+      			- 시작시 초기 index 값
+      	- step #04
+      		- 초기 시작시 애니메이션 효과 없이 탭 내용 활성화
+
+      	- step #03
+      		- 탭메뉴 선택시 탭내용 활성화
+      		- 시작시 0번째 탭메뉴및 탭내용 활성화
+
+      	- step #02
+      		- 탭메뉴 선택처리를 리팩토링
+      		- index값으로 탭메뉴 선택 처리
+      	- step #01
+      		- 탭메뉴 제작
+
+       */
+      $(document).ready(function () {
+        excuteTabPanel("#tabPanel1", 0);
+        excuteTabPanel("#tabPanel2", 1);
+      });
+
+      function excuteTabPanel(selector, firstIndex) {
+        var $tabPanel = null;
+        var $tabMenu = null;
+        var $tabContents = null;
+        var currentIndex = firstIndex;
+
+        function init() {
+          $tabPanel = $(selector);
+          $tabMenu = $tabPanel.find(".tab-menu ul li");
+          $tabContents = $tabPanel.find(".tab-contents div");
+          selectTabMenuAt(firstIndex, 0);
+        }
+        function unSelectTabMenuAt(index) {
+          $tabMenu.eq(index).removeClass("select");
+          $tabContents.eq(index).css("opacity", 0);
+        }
+        function selectTabMenuAt(index, speed) {
+          $tabMenu.eq(index).addClass("select");
+          $tabContents.eq(index).animate(
+            {
+              opacity: 1,
+            },
+            speed,
+            "easeInQuint"
+          );
+
+          currentIndex = index;
+        }
+        function switchTabMenu() {
+          $tabMenu.on("click", function () {
+            var index = $(this).index();
+            unSelectTabMenuAt(currentIndex);
+            selectTabMenuAt(index, 200);
+          });
+        }
+        init();
+        switchTabMenu();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="tab-panel" id="tabPanel1">
+      <div class="tab-menu">
+        <ul>
+          <li class="tab-item">
+            <a href="#">google</a>
+          </li>
+          <li class="tab-item">
+            <a href="#">facebook</a>
+          </li>
+          <li class="tab-item">
+            <a href="#">pinterest</a>
+          </li>
+          <li class="tab-item">
+            <a href="#">twitter</a>
+          </li>
+          <li class="tab-item">
+            <a href="#">path</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-contents">
+        <div><img src="./images/content_google.png" /></div>
+        <div><img src="./images/content_facebook.png" /></div>
+        <div><img src="./images/content_pinterest.png" /></div>
+        <div><img src="./images/content_twitter.png" /></div>
+
+        <div><img src="./images/content_path.png" /></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tabPanel2">
+      <div class="tab-menu">
+        <ul>
+          <li class="tab-item">
+            <a href="#">facebook</a>
+          </li>
+          <li class="tab-item">
+            <a href="#">pinterest</a>
+          </li>
+          <li class="tab-item">
+            <a href="#">twitter</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-contents">
+        <div><img src="./images/content_facebook.png" /></div>
+        <div><img src="./images/content_pinterest.png" /></div>
+        <div><img src="./images/content_twitter.png" /></div>
+      </div>
+    </div>
+  </body>
 </html>
