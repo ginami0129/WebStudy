@@ -81,7 +81,8 @@
           currentIndex = index;
         }
         function switchTabMenu() {
-          $tabMenu.on("click", function () {
+          $tabMenu.on("click", function (e) {
+            e.preventDefault();
             var index = $(this).index();
             unSelectTabMenuAt(currentIndex);
             selectTabMenuAt(index, 200);
