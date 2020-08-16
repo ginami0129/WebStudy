@@ -47,44 +47,63 @@
            단계07 – 오토 플레이 멈추기
 
        */
-      var currentImageIndex = null;
-      var $view = null;
-      var timeID = null;
+
       $(document).ready(function () {
-        init();
+        imageAnimationViewer();
       });
-      function init() {
-        $view = $("#view");
-        currentImageIndex = 1;
-        $("#prev").on("click", getPrevImg);
-        $("#next").on("click", getNextImg);
-        $("#play").on("click", autoPlay);
-        $("#stop").on("click", stopAutoPlay);
-      }
-      function setImageSrc() {
-        $view.attr("src", "./images/" + currentImageIndex + ".jpg");
-      }
-      function autoPlay() {
-        $("#prev").off("click");
-        $("#next").off("click");
-        $("#play").off("click");
-        timeID = setInterval(getNextImg, 50);
-      }
-      function getNextImg() {
-        currentImageIndex += 1;
-        if (currentImageIndex > 60) currentImageIndex = 1;
-        setImageSrc();
-      }
-      function getPrevImg() {
-        currentImageIndex -= 1;
-        if (currentImageIndex < 1) currentImageIndex = 60;
-        setImageSrc();
-      }
-      function stopAutoPlay() {
-        clearTimeout(timeID);
-        $("#prev").on("click", getPrevImg);
-        $("#next").on("click", getNextImg);
-        $("#play").on("click", autoPlay);
+
+      function imageAnimationViewer() {
+        var $view = null;
+        var timerID = -1;
+        var currentIndex = 1;
+        var autoPlayState = false;
+
+        function init() {
+          $view = $("#view");
+        }
+        function initEvent() {
+          $("#prev").on("click", function () {
+            if (autoPlayState == false) {
+              prevImg();
+            }
+          });
+          $("#next").on("click", function () {
+            if (autoPlayState == false) {
+              nextImg();
+            }
+          });
+          $("#play").on("click", startAutoPlay);
+          $("#stop").on("click", stopAutoPlay);
+        }
+        function showImageAt(index) {
+          $view.attr("src", "./images/" + index + ".jpg");
+          currentIndex = index;
+        }
+        function startAutoPlay() {
+          if (autoPlayState == false) {
+            autoPlayState = true;
+            timerID = setInterval(nextImg, 50);
+          }
+        }
+        function nextImg() {
+          var index = currentIndex + 1;
+          if (index > 60) index = 1;
+          showImageAt(index);
+        }
+        function prevImg() {
+          var index = currentIndex - 1;
+          if (index < 1) index = 60;
+          showImageAt(index);
+        }
+        function stopAutoPlay() {
+          if (autoPlayState == true) {
+            clearInterval(timerID);
+            timerID = -1;
+            autoPlayState = false;
+          }
+        }
+        init();
+        initEvent();
       }
     </script>
   </head>
