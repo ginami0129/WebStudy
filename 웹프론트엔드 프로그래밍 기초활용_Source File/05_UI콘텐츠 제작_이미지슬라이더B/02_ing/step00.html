@@ -117,14 +117,14 @@
             e.preventDefault();
             setImageSliderAt($indexNav.index(this));
           });
-          $(".slider-btn-prev").on("click", function(e) {
+          $(".slider-btn-prev").on("click", function (e) {
             e.preventDefault();
             prevImage();
-          })
-          $(".slider-btn-next").on("click", function(e) {
+          });
+          $(".slider-btn-next").on("click", function (e) {
             e.preventDefault();
             nextImage();
-          })
+          });
         }
         function selectIndexNavAt(index) {
           if (currentIndex > -1) {
@@ -152,14 +152,14 @@
             }
             $currentImage
               .stop()
-              .animate({ opacity: 0, left: currentPosition }, 300);
+              .animate({ opacity: 0, left: currentPosition }, 5000);
             $newImage.css("left", newPosition);
-            $newImage.stop().animate({ opacity: 1, left: 0 }, 300);
+            $newImage.stop().animate({ opacity: 1, left: 0 }, 5000);
           } else {
             if (currentIndex > -1) {
               $currentImage.css("opacity", 0);
             }
-            $newImage.stop().animate({ opacity: 1 }, 500);
+            $newImage.css("opacity", 1);
           }
         }
 
