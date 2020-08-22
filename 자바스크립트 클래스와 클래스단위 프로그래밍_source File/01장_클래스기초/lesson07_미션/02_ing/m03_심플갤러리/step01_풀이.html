@@ -1,38 +1,39 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title> </title>
 
     <style>
-        body {
-            font-size:9pt;
-        }
-        div.image-container{
-            position: relative;
-            border:1px solid #000;
-            height:600px;
-        }
+      body {
+        font-size: 9pt;
+      }
+      div.image-container {
+        position: relative;
+        border: 1px solid #000;
+        height: 600px;
+      }
 
-        div.image-container img{
-            position: absolute;
-            left:0;
-            top:0;
-            width:120px;
-        }
-
+      div.image-container img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 120px;
+      }
     </style>
- 
-        
-    <script type="text/javascript"  src="../../../libs/jquery-1.11.0.min.js"> </script>
+
+    <script
+      type="text/javascript"
+      src="../../../libs/jquery-1.11.0.min.js"
+    ></script>
     <script>
-        /*
+      /*
 
          미션 03: 심플 갤러리를 클래스로 만들기
          함수 단위 코딩으로 만들어진 심플 갤러리를 프로토타입 클래스로 만들어 주세요.
 
         */
-        /*
+      /*
          단계 #05
          - 리팩토링
          - 여러개의 매개변수 값을 하나의 오브젝트 리터럴로 변경
@@ -52,41 +53,80 @@
 
          */
 
-        $(document).ready(function(){
-
-
+      $(document).ready(function () {
+        var imageGallery1 = new ImageGallery({
+          selector: "#container1",
+          width: 150,
+          height: 150,
+          count: 6,
         });
 
+        var imageGallery2 = new ImageGallery({
+          selector: "#container2",
+          width: 200,
+          height: 200,
+          count: 4,
+        });
+      });
 
+      function ImageGallery(input1) {
+        var $images = null;
+        var width = 0;
+        var height = 0;
+        var count = 0;
+        this.init(input1);
+        this.show();
+      }
+      ImageGallery.prototype.init = function (input) {
+        this.$images = $(input.selector).find("img");
+        this.width = input.width;
+        this.height = input.height;
+        this.count = input.count;
+      };
+      ImageGallery.prototype.show = function () {
+        // 이미지 개수 구하기.
+        var length = this.$images.length;
+        // 이미지 배열하기.
+        for (var i = 0; i < length; i++) {
+          // n번째 이미지 구하기
+          var $img = this.$images.eq(i);
 
+          // 위치 값 구하기
+          var x = 100 + (i % this.count) * this.width;
+          var y = 100 + parseInt(i / this.count) * this.height;
+
+          // 위치 설정
+          $img.css({
+            left: x,
+            top: y,
+          });
+        }
+      };
     </script>
-</head>
-    
-<body>
-    
+  </head>
+
+  <body>
     <p>container1</p>
     <div class="image-container" id="container1">
-       
-        <img src="banners/1.png" >
-        <img src="banners/2.png" >
-        <img src="banners/3.png" >
-        <img src="banners/4.png" >
-        <img src="banners/5.png" >
-        <img src="banners/6.png" >
-        <img src="banners/7.png" >
-        <img src="banners/8.png" >   
+      <img src="banners/1.png" />
+      <img src="banners/2.png" />
+      <img src="banners/3.png" />
+      <img src="banners/4.png" />
+      <img src="banners/5.png" />
+      <img src="banners/6.png" />
+      <img src="banners/7.png" />
+      <img src="banners/8.png" />
     </div>
-     <p>container2</p>
-     <div class="image-container" id="container2">
-         
-        <img src="banners/1.png" >
-        <img src="banners/2.png" >
-        <img src="banners/3.png" >
-        <img src="banners/4.png" >
-        <img src="banners/5.png" >
-        <img src="banners/6.png" >
-        <img src="banners/7.png" >
-        <img src="banners/8.png" >   
+    <p>container2</p>
+    <div class="image-container" id="container2">
+      <img src="banners/1.png" />
+      <img src="banners/2.png" />
+      <img src="banners/3.png" />
+      <img src="banners/4.png" />
+      <img src="banners/5.png" />
+      <img src="banners/6.png" />
+      <img src="banners/7.png" />
+      <img src="banners/8.png" />
     </div>
-</body>
+  </body>
 </html>
