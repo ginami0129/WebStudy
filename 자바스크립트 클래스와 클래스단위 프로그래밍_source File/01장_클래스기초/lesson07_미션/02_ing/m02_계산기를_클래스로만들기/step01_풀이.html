@@ -50,7 +50,6 @@
          */
         $(document).ready(function() {
           var calculator = new Calculator();
-          calculator.start();
         });
 
         function Calculator() {
@@ -59,25 +58,23 @@
           var $op = null;
           var $cal = null;
           var $output = null;
+
+          this.init();
+          this.initEvent();
         }
         Calculator.prototype.init = function() {
           this.$val1 = $("#val1");
           this.$val2 = $("#val2");
           this.$op = $("#op");
-          this.$cal = $("#cal");
           this.$output = $("#output");
         }
         Calculator.prototype.initEvent = function() {
           var objThis = this;
-          this.$cal.on("click", function(){
-            var result = objThis.calculate();
-            objThis.$output.text(result.toString());
+          $("#cal").on("click", function(){
+            objThis.exeCalculate();
           })
         }
-        Calculator.prototype.calculate = function() {
-          var val1 = Number(this.$val1.val());
-          var val2 = Number(this.$val2.val());
-          var op = this.$op.val();
+        Calculator.prototype.calculate = function(val1, val2, op) {
           var result = "";
           switch (op) {
             case "+":
@@ -95,11 +92,13 @@
             default:
              result = "올바른 연산자를 넣어주세요.";
           }
-          return result;
+          this.$output.text(result);
         }
-        Calculator.prototype.start = function() {
-          this.init();
-          this.initEvent();
+        Calculator.prototype.exeCalculate = function() {
+          var val1 = Number(this.$val1.val());
+          var val2 = Number(this.$val2.val());
+          var op = this.$op.val();
+          return this.calculate(val1, val2, op);
         }
 
 
