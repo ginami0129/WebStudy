@@ -1,22 +1,22 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>구구단 미션</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>구구단 미션</title>
 
-        <style>
-			#output {
-				border: 1px solid #000;
-				width: 400px;
-				height: 400px;
-				font-size: 11pt;
-			}
-        </style>
+    <style>
+      #output {
+        border: 1px solid #000;
+        width: 400px;
+        height: 400px;
+        font-size: 11pt;
+      }
+    </style>
 
-        <script src="../../../libs/jquery-1.11.0.min.js"></script>
+    <script src="../../../libs/jquery-1.11.0.min.js"></script>
 
-        <script>
-            /*
+    <script>
+      /*
              미션01-99단 출력을 클래스로 만들기
              구구단 중 3단, 6단, 9단을 전문으로 출력하는 메서드를 가진 클래스를 다음 요구사항에 맞게 만들어주세요.
 
@@ -25,7 +25,7 @@
              2. 지우기 버튼을 누르면 출력창의 정보를 모두 지워주세요.
              3. prototype 방식 클래스로 만들어 주세요.
              */
-            /*
+      /*
              단계05
              - 리팩토링
 
@@ -40,49 +40,60 @@
              단계01
              - 클래스 만들기
              */
-            $(document).ready(function() {
+      $(document).ready(function () {
+        var my99dan = new My99DAN("#output");
+        $("#3dan").click(function () {
+          // 3단을 출력하는 메서드를 호출해주세요.
+          my99dan.print(3);
+        });
+        $("#6dan").click(function () {
+          // 6단을 출력하는 메서드를 호출해주세요.
+          my99dan.print(6);
+        });
+        $("#9dan").click(function () {
+          // 9단을 출력하는 메서드를 호출해주세요.
+          my99dan.print(9);
+        });
 
-                $("#3dan").click(function() {
-                    // 3단을 출력하는 메서드를 호출해주세요.
+        $("#clear").click(function () {
+          // 출력된 구구단을 지우는 메서드를 호출해주세요.
+          my99dan.clear();
+        });
+      });
 
-                })
-                $("#6dan").click(function() {
-                    // 6단을 출력하는 메서드를 호출해주세요.
+      function My99DAN(selector) {
+        this.$output = $(selector);
+      }
+      My99DAN.prototype.print = function (dan) {
+        var result = "";
+        for (var i = 1; i <= 9; ++i) {
+          result += dan + " * " + i + " = " + dan * i + "<br>";
+        }
+        this.$output.html(result);
+      };
+      My99DAN.prototype.clear = function () {
+        this.$output.text("");
+      };
+    </script>
+  </head>
 
-                })
-                $("#9dan").click(function() {
-                    // 9단을 출력하는 메서드를 호출해주세요.
-
-                })
-
-                $("#clear").click(function() {
-                    // 출력된 구구단을 지우는 메서드를 호출해주세요.
-
-                })
-            });
-
-
-        </script>
-    </head>
-
-    <body>
-        
-<div>
-    <button id="3dan">
+  <body>
+    <div>
+      <button id="3dan">
         3단출력
-    </button>
-    <button id="6dan">
+      </button>
+      <button id="6dan">
         6단출력
-    </button>
-    <button id="9dan">
+      </button>
+      <button id="9dan">
         9단출력
-    </button>
-    <button id="clear">
+      </button>
+      <button id="clear">
         지우기
-    </button>
-</div>
-<div id="output">
-    여기에서 선택한 구구단이 출력됩니다.
-</div>
-    </body>
+      </button>
+    </div>
+    <div id="output">
+      여기에서 선택한 구구단이 출력됩니다.
+    </div>
+  </body>
 </html>
