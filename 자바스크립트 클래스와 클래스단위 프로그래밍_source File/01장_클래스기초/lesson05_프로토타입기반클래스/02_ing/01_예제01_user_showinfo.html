@@ -1,29 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title> </title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> </title>
 
-	<script>
-		/*
+    <script>
+      /*
 		 예제 01: 프로토타입 방식을 활용한 간단한 클래스 만들기
 		 */
-		// 클래스 생성자
+      // 클래스 생성자
+      function User() {
+        this.userName = "ddnadongnae";
+        this.age = 30;
+      }
 
+      // 메서드 정의
+      User.prototype.showInfo = function () {
+        document.write("userName = " + this.userName, " age = " + this.age);
+      };
 
-		// 메서드 정의
+      // 인스턴스 생성
+      var user1 = new User();
+      user1.showInfo();
 
+      // 메서드 호출
+    </script>
+  </head>
 
-		// 인스턴스 생성
-
-		// 메서드 호출
-
-
-	</script>
-</head>
-
-	<body>
-
-	</body>
-
+  <body></body>
 </html>
