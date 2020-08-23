@@ -66,6 +66,17 @@
       $(document).ready(function () {
         // 인스턴스 생성
         var tab1 = new TabMenu("#tabMenu1");
+        $("#btnSelect").on("click", function () {
+          var index = window.prompt(
+            "선택할 메뉴 아이템의 인덱스 값을 입력해주세요."
+          );
+          index = parseInt(index);
+          if (index >= 0 && index < tab1.$menuItems.length) {
+            tab1.setSelectItemAt(index);
+          } else {
+            alert("유효하지 않은 인덱스 입니다.");
+          }
+        });
       });
 
       function TabMenu(selector) {
@@ -90,16 +101,6 @@
         this.$menuItems.on("click", function () {
           objThis.setSelectItem($(this));
         });
-        $("#btnSelect").on("click", function () {
-          var index = parseInt(
-            window.prompt("선택할 메뉴 아이템의 인덱스 값을 입력해주세요.")
-          );
-          if (index >= 0 && index < objThis.$menuItems.length) {
-            objThis.setSelectItemAt(index);
-          } else {
-            alert("유효하지 않은 인덱스 입니다.");
-          }
-        });
       };
 
       // $menuItem에 해당하는 메뉴 아이템 선택하기
@@ -117,15 +118,7 @@
       // index에 해당하는 메뉴 아이템 선택하기
       TabMenu.prototype.setSelectItemAt = function (index) {
         var $menuItem = this.$menuItems.eq(index);
-
-        // 기존 선택메뉴 아이템을 비활성화 처리 하기
-        if (this.$selectMenuItem) {
-          this.$selectMenuItem.removeClass("select");
-        }
-
-        // 신규 아이템 활성화 처리 하기
-        this.$selectMenuItem = $menuItem;
-        this.$selectMenuItem.addClass("select");
+        this.setSelectItem($menuItem);
       };
     </script>
   </head>
