@@ -69,21 +69,20 @@
         });
       });
 
-      function ImageGallery(input1) {
-        var $images = null;
-        var width = 0;
-        var height = 0;
-        var count = 0;
-        this.init(input1);
-        this.show();
-      }
-      ImageGallery.prototype.init = function (input) {
-        this.$images = $(input.selector).find("img");
+      function ImageGallery(input) {
+        this.$images = null;
+        this.selector = input.selector;
         this.width = input.width;
         this.height = input.height;
         this.count = input.count;
+        this.init();
+        this.showGallery();
+      }
+      ImageGallery.prototype.init = function () {
+        this.$images = $(this.selector).find("img");
+
       };
-      ImageGallery.prototype.show = function () {
+      ImageGallery.prototype.showGallery = function () {
         // 이미지 개수 구하기.
         var length = this.$images.length;
         // 이미지 배열하기.
