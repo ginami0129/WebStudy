@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
-		
+    <add-user :onAddUser="addUser"></add-user>
+    <user-list :users="userList"></user-list>
 	</div>
 </template>
 
@@ -11,7 +12,17 @@ export default {
 	components: {
 		UserList,
 		AddUser
-	},
+  },
+  data(){
+    return {
+      userList:["user1","user2"]
+    }
+  },
+  methods:{
+    addUser(name){
+      this.userList.push(name)
+    }
+  }
 
 	
 };
