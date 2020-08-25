@@ -8,7 +8,7 @@
 </head>
 <body>
       <div id="app">
-            count = <span class="count"></span>
+            count = <span class="count">{{count}}</span>
       </div>
 
       <script>
@@ -20,10 +20,14 @@
                         el: '#app',
                         data:data,
                         mounted(){
-
+                          this.addCount();
                         },
                         methods:{
-
+                          addCount(){
+                            setInterval(() => {
+                              ++this.count;
+                            }, 500);
+                          }
                         }
                   })
 
