@@ -1,0 +1,35 @@
+Vue Router 사용
+
+https://router.vuejs.org/kr/installation.html
+
+1. VueRouter 설치
+      - Vue CLI 활용 프로젝트 생성 시, Router 선택
+      - 또는 다음과 같이 직접설치
+            npm install vue-router
+
+2. Vue에 연결
+      Vue.use(Router)
+
+
+3. VueRouter 객체 생성: 패스 만들기
+      - 라우터 정보를 담은 VueRouter 객체 생성
+      - new Router({
+            mdoe:"history",          // html5 history api 사용
+            routes:[ {
+                  path:"",
+                  component:Component
+            },...]
+      }
+
+4. RouterView 객체 생성 : 선택한 패스에 해당하는 화면(주로 컴포넌트) 보여주기
+      - <router-view> 객체 생성
+
+
+5.Vue 객체에 Router 객체 연결하기
+
+
+6. 활성화(이동) 방법
+      - 방법01: <router-link to="path명"> 이용하는 방법
+      - 방법02: this.$router.push({path:"path명")
+
+
