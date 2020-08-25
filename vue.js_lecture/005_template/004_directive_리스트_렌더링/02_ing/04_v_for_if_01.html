@@ -13,12 +13,12 @@
 <body>
       <div id="app">
             <div class="list">
-                  <ul v-for="user in list" ??>
+                  <ul v-for="user in list" v-if="user.age>=20">
                         <li>name = {{user.name}}</li>
                         <li>age = {{user.age}}</li>
                         <li>address = {{user.address}}</li>
                   </ul>
-                  <div ??>
+                  <div v-else>
                         조건에 맞지 않는 데이터 입니다.
                   </div>
             </div>

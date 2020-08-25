@@ -15,11 +15,14 @@
       <div id="app">
             <div class="list">
                   <!-- 내용 수정  -->
-                  <ul v-if="list.length!=0"  v-for="user in list">
-                        <li>name = {{user.name}}</li>
-                        <li>age = {{user.age}}</li>
-                        <li>address = {{user.address}}</li>
-                  </ul>
+                  
+                  <template v-if="list.length!=0">
+                    <ul v-if="list.length!=0"  v-for="user in list">
+                          <li>name = {{user.name}}</li>
+                          <li>age = {{user.age}}</li>
+                          <li>address = {{user.address}}</li>
+                    </ul>
+                  </template>
                   <div v-else>
                         데이터가 존재하지 않습니다.
                   </div>

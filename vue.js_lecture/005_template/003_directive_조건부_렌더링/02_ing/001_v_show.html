@@ -16,10 +16,10 @@
 </head>
 <body>
 <div id="app">
-      <button //??>
+      <button @click="toggle">
             토글
       </button>
-      <div //??>
+      <div v-show="visible">
             보이고 숨기기
       </div>
 </div>
@@ -31,10 +31,12 @@
 	var app1 = new Vue({
 		el:"#app",
 		data:{
-			//??
+			visible:false
 		},
 		methods:{
-			//??
+			toggle(){
+        this.visible = !this.visible;
+      }
 		}
 	})
 

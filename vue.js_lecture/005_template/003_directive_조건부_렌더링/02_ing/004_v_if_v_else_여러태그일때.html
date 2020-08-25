@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <title>Title</title>
-      <script src="../../../libs/vue.js"></script>
-      <script>
-		/*
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="../../../libs/vue.js"></script>
+    <script>
+      /*
                  다음이 아니라
                        <div>
                               <div></div>
@@ -22,39 +22,35 @@
                               <div></div>
                         </template>
              */
-      </script>
-</head>
-<body>
-<div id="app">
+    </script>
+  </head>
+  <body>
+    <div id="app">
       <button @click="toggle">
-            토글
+        토글
       </button>
-     //??
-            <div>test1</div>
-            <div>test2</div>
-      //??
-      //??
-            <div>else test1</div>
-            <div>else test2</div>
-      //??
-</div>
+      <template v-if="visible">
+        <div>test1</div>
+        <div>test2</div>
+      </template>
+      <template v-else>
+        <div>else test1</div>
+        <div>else test2</div>
+      </template>
+    </div>
 
-<script>
-
-
-
-	var app1 = new Vue({
-		el:"#app",
-		data:{
-			visible:true
-		},
-		methods:{
-			toggle:function(){
-				this.visible=!this.visible;
-                  }
-		}
-	})
-
-</script>
-</body>
+    <script>
+      var app1 = new Vue({
+        el: "#app",
+        data: {
+          visible: true,
+        },
+        methods: {
+          toggle: function () {
+            this.visible = !this.visible;
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

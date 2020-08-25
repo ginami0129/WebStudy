@@ -16,19 +16,19 @@
       <div>
             점수 입력<input type="text" v-model="value">
       </div>
-      <div >
+      <div  v-if="value=='a'">
             a입니다.
       </div>
-      <div >
+      <div v-else-if="value=='b'">
             b입니다.
       </div>
-      <div >
+      <div v-else-if="value=='c'">
             c입니다.
       </div>
-      <div >
+      <div v-else-if="value=='d'">
             d입니다.
       </div>
-      <div >
+      <div v-else>
             해당하는 값이 없습니다.
       </div>
 

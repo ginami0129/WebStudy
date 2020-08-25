@@ -13,8 +13,8 @@
 </head>
 <body>
 <div id="app">
-      <div //??>
-
+      <div v-html="message">
+        {{message}}
       </div>
 </div>
 
@@ -34,7 +34,7 @@
 		methods:{
 			addCount:function(){
 				setInterval(()=>{
-						this.message="<p>message "+this.count+"</p>";
+						this.message="<p style='color:#ff0000'>message "+this.count+"</p>";
 						this.count++;
 					},500
 				)
