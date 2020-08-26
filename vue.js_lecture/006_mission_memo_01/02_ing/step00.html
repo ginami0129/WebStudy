@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-      <meta charset="UTF-8">
-      <title>Title</title>
-      <script src="../../libs/vue.js"></script>
-      <script>
-            /*
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="../../libs/vue.js"></script>
+    <script>
+      /*
                         심플 메모장
                               step #04
                                     - 수정
@@ -22,40 +21,86 @@
                               step #00
                                     - 레이아웃 제작
                          */
-      </script>
-</head>
+    </script>
+  </head>
 
-<body>
-<div id="app">
+  <body>
+    <div id="app">
       <div>
-            <span>name:<input type="text" class="memo-name" ></span>
-            <button class="btn-add-memo"> 추가</button>
+        <span
+          >name:<input type="text" class="memo-name" v-model="newMemo"
+        /></span>
+
+        <template v-if="state == 'add'">
+          <button class="btn-add-memo" @click="createMemo">추가</button>
+        </template>
+        <template v-if="state == 'update'">
+          <button class="btn-add-memo" @click="updateMemo">적용</button>
+          <button class="btn-add-memo" @click="clearEditMode">취소</button>
+        </template>
       </div>
 
       <div class="list">
-            <ul>
-                  <li>메모<button>삭제</button><button>수정</button></li>
-            </ul>
+        <ul>
+          <li v-for="(memo, index) in list" :key="index">
+            {{memo}}<button @click="deleteMemo(memo)">삭제</button
+            ><button @click="setEditMode(index, memo)">수정</button>
+          </li>
+        </ul>
       </div>
+    </div>
 
-</div>
+    <script>
+      const EDIT_MODE = {
+        UPDATE: "update",
+        ADD: "add",
+      };
 
-<script>
       var data = {
-            list:["memo1","memo2", "memo3"],
-            newMemo:""
-      }
+        list: ["memo1", "memo2", "memo3"],
+        newMemo: "",
+        state: EDIT_MODE.ADD,
+        updateMemoIndex: -1,
+      };
 
       var vm = new Vue({
-            el: '#app',
-            data:data,
-            methods:{
-
+        el: "#app",
+        data: data,
+        methods: {
+          updateMemo() {
+            if (this.state == EDIT_MODE.UPDATE) {
+              this.list[this.updateMemoIndex] = this.newMemo;
+              this.clearEditMode();
             }
-      })
-
-
-</script>
-</body>
-
+          },
+          clearEditMode() {
+            this.state = EDIT_MODE.ADD;
+            this.newMemo = "";
+            this.updateMemoIndex = -1;
+          },
+          setEditMode(index, targetMemo) {
+            this.updateMemoIndex = index;
+            this.newMemo = targetMemo;
+            this.state = EDIT_MODE.UPDATE;
+          },
+          createMemo() {
+            if (this.newMemo.length == 0) {
+              alert("값을 입력해주세요");
+              return;
+            }
+            this.list.push(this.newMemo);
+            this.newMemo = "";
+          },
+          deleteMemo(targetMemo) {
+            let index = this.list.findIndex((memo) => {
+              return memo == targetMemo;
+            });
+            if (index != -1) {
+              this.list.splice(index, 1);
+            }
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
