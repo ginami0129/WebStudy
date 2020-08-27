@@ -17,7 +17,9 @@
 <div id="app">
       <div >
 
-            //??
+            <div v-for="data in messageList">
+              <input type="radio" v-model="message" :value="data"><label>{{data}}</label>
+            </div>
 
             <div>
                   {{message}}
@@ -33,7 +35,7 @@
 	var app1 = new Vue({
 		el:"#app",
 		data:{
-			messageList:["철수","영희","영수"],
+			messageList:["철수","영희","영수","딴동네"],
                   message:"영수"
 		}
 	})

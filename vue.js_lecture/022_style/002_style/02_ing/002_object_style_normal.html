@@ -28,7 +28,7 @@
 <div id="app">
       <div >
             <button @click="toggle">토글</button>
-            <div //??>테스트입니다 </div>
+            <div :style="styleObject">테스트입니다 </div>
 
       </div>
 </div>
@@ -51,10 +51,12 @@
 			toggle(){
 				this.active = !this.active;
 				if(this.active) {
-					//??
+					this.styleObject.border="4px solid #f00";
+					this.styleObject.fontSize="20px";
 				}
 				else {
-					//??
+          this.styleObject.border="";
+					this.styleObject.fontSize="12px";
 				}
                   }
 		}

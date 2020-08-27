@@ -18,7 +18,7 @@
       <div >
             <Select v-model="message">
                   <option value="">선택</option>
-                  //??
+                  <option v-for="data in messageList" :value="data">{{data}}</option>
             </Select>
             <div>
                   {{message}}
@@ -34,7 +34,7 @@
 	var app1 = new Vue({
 		el:"#app",
 		data:{
-			messageList:["철수", "영희", "영수"],
+			messageList:["철수", "영희", "영수", "딴동네"],
 			message:"영수"
 
 		}

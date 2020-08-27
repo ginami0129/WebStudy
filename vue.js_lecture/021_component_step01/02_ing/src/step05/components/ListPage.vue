@@ -2,7 +2,9 @@
       <div>
             <list-header></list-header>
             <div>
-                 ??
+                 <ul>
+                   <li v-for="memo in list" :key="memo">{{memo}}</li>
+                 </ul>
             </div>
             <ListFooter></ListFooter>
       </div>
@@ -21,7 +23,12 @@ export default {
             
             }
       },
-      //??
+      props:{
+        list:{
+          type:Array,
+          require:true
+        }
+      }
       
 }
 </script>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <title>Title</title>
-      <script src="../../../libs/vue.js"></script>
-      <script>
-		/*
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="../../../libs/vue.js"></script>
+    <script>
+      /*
                  기본 이벤트 수식어
                   - 이벤트 수식어란? : 이벤트 추가 기능
                   - 사용법 : @이벤트명.수식어명.수식어명...
@@ -18,40 +18,33 @@
 
 
              */
-      </script>
-</head>
-<body>
-<div id="app">
-      <div >
-            <button @click="test">일반 실행</button><br>
-            <button @click//??="test">left 실행</button><br>
-            <button @click//??="test">right 실행</button><br>
-            <button @click//??="test">shift+left 실행</button><br>
-
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <button @click="test">일반 실행</button><br />
+        <button @click.left="test">left 실행</button><br />
+        <button @click.right="test">right 실행</button><br />
+        <button @click.left.shift="test">shift+left 실행</button><br />
       </div>
-      <div v-html="message">
+      <div v-html="message"></div>
+    </div>
 
-      </div>
-</div>
+    <script>
+      var app1 = new Vue({
+        el: "#app",
+        data: {
+          count: 0,
+          message: "",
+        },
 
-<script>
-
-
-
-	var app1 = new Vue({
-		el:"#app",
-		data:{
-			count:0,
-                  message:""
-		},
-
-		methods:{
-			test(){
-				alert("test 실행");
-                  }
-		}
-	})
-
-</script>
-</body>
+        methods: {
+          test() {
+            alert("test 실행");
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

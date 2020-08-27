@@ -25,8 +25,8 @@
 <body>
       <div id="app">
             <div @click="test">
-                  <button //??>실행, stop없이</button>
-                  <button //??>실행, stop추가</button>
+                  <button @click="addMessage">실행, stop없이</button>
+                  <button @click.stop="addMessage">실행, stop추가</button>
                   <div v-html="message">
 
                   </div>

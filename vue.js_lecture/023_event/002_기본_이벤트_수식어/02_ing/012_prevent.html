@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <title>Title</title>
-      <script src="../../../libs/vue.js"></script>
-      <script>
-		/*
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="../../../libs/vue.js"></script>
+    <script>
+      /*
                  기본 이벤트 수식어
                   - 이벤트 수식어란? : 이벤트 추가 기능
                   - 사용법 : @이벤트명.수식어명.수식어명...
@@ -20,33 +20,33 @@
 
 
              */
-      </script>
-</head>
-<body>
-      <div id="app">
-            <div>
-                  <a href="http://www.webdongne.com" @click="addMessage">prevent 사용 X</a>
-                  <a href="http://www.webdongne.com" //??>prevent 사용 O</a>
-            </div>
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <a href="http://www.webdongne.com" @click="addMessage"
+          >prevent 사용 X</a
+        >
+        <a href="http://www.webdongne.com" @click.prevent.stop="addMessage"
+          >prevent 사용 O</a
+        >
       </div>
+    </div>
 
-<script>
+    <script>
+      var app1 = new Vue({
+        el: "#app",
+        data: {
+          message: "",
+        },
 
-
-
-	var app1 = new Vue({
-		el:"#app",
-		data:{
-                  message:""
-		},
-
-		methods:{
-			addMessage(){
-				alert("실행");
-			}
-		}
-	})
-
-</script>
-</body>
+        methods: {
+          addMessage() {
+            alert("실행");
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

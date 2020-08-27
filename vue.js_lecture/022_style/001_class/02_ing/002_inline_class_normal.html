@@ -36,7 +36,7 @@
       <div >
             <button @click="toggle1">토글(border)</button>
             <button @click="toggle2">토글(font)</button>
-            <div //??>테스트입니다 </div>
+            <div :class="{active1:isActive1, active2:isActive2}">테스트입니다 </div>
 
       </div>
 </div>
@@ -54,10 +54,10 @@
 
 		methods:{
 			toggle1(){
-				//??
+				this.isActive1 = !this.isActive1;
                   },
 			toggle2(){
-				//??
+				this.isActive2 = !this.isActive2;
 			}
 		}
 	})

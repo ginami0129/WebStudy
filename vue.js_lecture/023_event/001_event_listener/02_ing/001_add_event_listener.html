@@ -18,9 +18,9 @@
 </head>
 <body>
 <div id="app">
-      <button //??>실행</button>
-      <button //??>실행</button>
-      <button //??>실행</button>
+      <button v-on:click="addCount">실행</button>
+      <button @click="addCount">실행</button>
+      <button @click="addCount()">실행</button>
       <div>
             count = {{count}}
       </div>
@@ -37,7 +37,7 @@
 		},
 
 		methods:{
-			addCount:function(){
+			addCount(){
 				this.count++;
 			}
 		}

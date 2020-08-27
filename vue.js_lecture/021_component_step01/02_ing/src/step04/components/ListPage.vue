@@ -1,7 +1,9 @@
 <template>
       <div>
             <list-header></list-header>
-          //??
+          <ul>
+            <li v-for="memo in list" :key="memo">{{memo}}</li>
+          </ul>
             <ListFooter></ListFooter>
       </div>
 </template>
@@ -15,7 +17,9 @@ export default {
             ListFooter
       },
       data(){
-            ??
+            return {
+              list:["memo1", "memo2", "memo3"]
+            }
       }
 }
 </script>

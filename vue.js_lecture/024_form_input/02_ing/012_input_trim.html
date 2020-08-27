@@ -16,7 +16,7 @@
 <body>
 <div id="app">
       <div >
-            <div>입력값1 : <input type="text" //??></div>
+            <div>입력값1 : <input type="text" v-model.trim="message"></div>
             <div>입력값2 : <input type="text" v-model="message"></div>
             <div>
                   공백제거 : {{message}} {{message.length}}
