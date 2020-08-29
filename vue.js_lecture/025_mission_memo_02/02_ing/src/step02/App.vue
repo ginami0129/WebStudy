@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <list-page></list-page>
+    <list-page :list="list"></list-page>
+    
   </div>
 </template>
 
@@ -13,6 +14,11 @@ export default {
   name: 'app',
   components: {
     ListPage
+  },
+  data() {
+    return {
+      list:["memo1","memo2","memo3"]
+    }
   }
 }
 </script>
