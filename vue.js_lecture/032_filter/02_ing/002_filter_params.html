@@ -42,7 +42,7 @@
                 필터 테스트 입니다.
 
                 <div>
-                    {{message|myFilter(2)}}
+                    {{message|myFilter(2, "hello")}}
                 </div>
         </div>
         `,
@@ -52,7 +52,9 @@
             }
         },
         filters:{
-            ??
+            myFilter(value, param, param2) {
+            return "___" + value +"___" + param + param2;
+            }
         }
     })
 

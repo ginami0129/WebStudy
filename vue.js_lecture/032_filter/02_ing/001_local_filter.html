@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
     <script src="../../libs/vue.js"></script>
     <script>
-        /*
+      /*
              지역 필터 생성하기
                 - 선언
                     export default {
@@ -28,44 +28,43 @@
 
              */
     </script>
-
-
-</head>
-<body>
-<div id="app">
-    <div>
+  </head>
+  <body>
+    <div id="app">
+      <div>
         <my-component></my-component>
+      </div>
     </div>
-</div>
 
-<script>
+    <script>
 
-    Vue.component("MyComponent", {
-        template: `<div>
-                필터 테스트 입니다.
+      Vue.component("MyComponent", {
+          template: `<div>
+                  필터 테스트 입니다.
 
-                <div>
-                    {{message??}}
-                </div>
-        </div>
-        `,
-        data(){
-            return {
-                message:"test1"
-            }
-        },
-        filters:{
-            ??
-        }
-    })
+                  <div>
+                      {{message|myFilter}}
+                  </div>
+          </div>`
+          ,
+          data(){
+              return {
+                  message:"test1"
+              }
+          },
+          filters:{
+              myFilter(value) {
+                return "___"+value;
+              }
+          }
+      })
 
-    var app1 = new Vue({
-        el: "#app",
-        data: {
-            message: ""
-        }
-    })
-
-</script>
-</body>
+      var app1 = new Vue({
+          el: "#app",
+          data: {
+              message: ""
+          }
+      })
+    </script>
+  </body>
 </html>
