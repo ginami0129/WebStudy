@@ -2,7 +2,7 @@
     <div class="child">
         Child 컴포넌트
         <div>
-            입력값 = <input type="text" v-model="value" ??>
+            입력값 = <input type="text" v-model="value" ref="input1">
         </div>
 
     </div>

@@ -5,7 +5,7 @@
             <button @click="addMemo"> 부모에서 자식으로 데이터 보내기</button>
         </div>
 
-        <child-component ??></child-component>
+        <child-component :list="list"></child-component>
     </div>
 </template>
 

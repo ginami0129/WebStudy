@@ -20,7 +20,12 @@
                 count:1
             }
         },
-        //??
+        props:{
+          list: {
+            type:Array,
+            default:[]
+          }
+        }
 
 
     }

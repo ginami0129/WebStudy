@@ -6,12 +6,12 @@
 			<button @click="getInput1">input1 포커스 이동</button>
 		</div>
 		<div>
-			<sample-component ??></sample-component>
-			<sample-component ??></sample-component>
+			<sample-component ref="sample1"></sample-component>
+			<sample-component  ref="sample2"></sample-component>
 		</div>
 
 		<div>
-			<parent-component ??></parent-component>
+			<parent-component  ref="parent"></parent-component>
 		</div>
 
 	</div>
@@ -45,14 +45,13 @@
 		},
 		methods:{
 			getCount1(){
-				alert(??);
+				alert(this.$refs.sample1.count);
 			},
 			getCount2(){
-				alert(??);
+				alert(this.$refs.sample2.count);
 			},
 			getInput1(){
-				??
-
+        this.$refs.parent.$refs.child.$refs.input1.focus();
 			}
 
 		}

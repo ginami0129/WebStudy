@@ -1,7 +1,11 @@
 <template>
     <div class="parent">
         <ul>
-            <li v-for="(memo,index) in list" ?? ??>{{index}}. {{memo}}</li>
+            <li v-for="(memo,index) in list" 
+            :class="{selected:index==selectedIndex}" 
+            :key="index"
+            @click="setSelectedMemo(index)"
+            >{{index}}. {{memo}}</li>
         </ul>
 
 
@@ -27,8 +31,16 @@
                 type:Array,
                 default:[]
             },
-            ??,
-            ??,
+            selectedIndex:{
+              type:Number,
+              default:0
+            },
+            setSelectedMemo:{
+              type:Function,
+              default:()=>{
+                console.log("함수의 재설정이 필요합니다.");
+              }
+            }
 
         }
 

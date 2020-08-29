@@ -2,7 +2,7 @@
     <div class="parent">
 
         부모 컴포넌트
-        <child-component ??></child-component>
+        <child-component ref="child" ></child-component>
 
     </div>
 </template>

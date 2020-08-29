@@ -3,8 +3,12 @@
 		<p>
 			<button @click="onAddMemo" >메모 추가</button>
 		</p>
-		<list-component ?? ?? ??></list-component>
-		<view-component ??></view-component>
+		<list-component 
+      :list="list"
+      :setSelectedMemo="setSelectedMemo"
+      :selectedIndex="selectedIndex"></list-component>
+		<view-component 
+      :memo="selectedMemo"></view-component>
 	</div>
 </template>
 
@@ -18,9 +22,9 @@
 	export default {
 		data(){
 			return {
-				list:["memo1", "memo2"],
-				??,
-				??
+        list:["memo1", "memo2"],
+        selectedIndex:0,
+        selectedMemo:""
 			}
 		},
 		components: {
@@ -28,13 +32,12 @@
 			ViewComponent
 		},
 		created(){
-			this.setSelectedMemo(0);
+			this.setSelectedMemo(1);
 		},
 		methods:{
 			setSelectedMemo(index){
-				??
-				??
-
+        this.selectedIndex=index;
+        this.selectedMemo=this.list[index];
 			},
 			onAddMemo(){
 				this.list.push("memo"+(this.list.length+1));

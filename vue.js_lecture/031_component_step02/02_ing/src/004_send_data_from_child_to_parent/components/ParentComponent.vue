@@ -5,7 +5,7 @@
             자식에서 받은 데이터 = {{selectedMemo}}
         </div>
 
-        <child-component ??></child-component>
+        <child-component @select="onSelectMemo"></child-component>
     </div>
 </template>
 

@@ -21,11 +21,11 @@
 
         methods: {
             onSelected(memo) {
-                ??
+                this.$emit(ChildComponent.SELECT, memo);
             }
         }
     }
-    ??
+    ChildComponent.SELECT = "select"
 
     export default ChildComponent;
 </script>
