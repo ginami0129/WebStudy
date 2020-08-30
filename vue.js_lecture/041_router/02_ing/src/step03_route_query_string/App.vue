@@ -3,8 +3,8 @@
     <ul class="menu">
       <router-link to="/" tag="li">home</router-link>
       <router-link to="/about" tag="li">about</router-link>
-      <router-link to="/menu1??" tag="li">menu1</router-link>
-      <router-link to="/menu2??" tag="li">menu2</router-link>
+      <router-link to="/menu1?name=userName1&age=30" tag="li">menu1</router-link>
+      <router-link to="/menu2??name=userName2&age=20" tag="li">menu2</router-link>
     </ul>
     <hr />
     <router-view/>

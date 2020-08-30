@@ -3,10 +3,11 @@
         <div class="sub-nav">
             <div>MainPage1</div>
             <ul>
-                ??
+                <router-link to="sub1" tag="li">sub1</router-link>
+                <router-link to="sub2" tag="li">sub2</router-link>
             </ul>
         </div>
-        ??
+        <router-view class="sub-contents"></router-view>
 
     </div>
 </template>

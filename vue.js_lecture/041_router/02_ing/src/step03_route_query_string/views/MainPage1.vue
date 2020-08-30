@@ -1,18 +1,17 @@
 <template>
-    <div class="home">
-        Main Page1
-        ??
-
-    </div>
+  <div class="home">
+    Main Page1
+    Page1 name={{$route.query.name}} age={{$route.query.age}}
+  </div>
 </template>
 
 <script>
-
-    export default {
-        data() {
-            return {
-
-            }
-        }
-    }
+export default {
+  data() {
+    return {};
+  },
+  mounted() {
+    // this.$route.query.
+  }
+};
 </script>

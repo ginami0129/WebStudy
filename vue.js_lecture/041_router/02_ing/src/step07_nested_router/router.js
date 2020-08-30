@@ -26,12 +26,37 @@ export default new Router({
             path: '/menu1',
             name: 'menu11',
             component: MainPage1,
-            ??
+            children: [
+              {
+                path:"/",
+                redirect:"sub1"
+              },{
+                path:"sub1",
+                component: Sub1
+              },{
+                path:"sub2",
+                component: Sub2
+              }
+            ]
         }, {
             path: '/menu2',
             name: 'menu22',
             component: MainPage2,
-            ??
+            children: [
+              {
+                path:"/",
+                redirect:"sub1"
+              },{
+                path:"sub1",
+                component: Sub1
+              },{
+                path:"sub2",
+                component: Sub2
+              },{
+                path:"sub3",
+                component: Sub3
+              }
+            ]
         }
     ]
 })

@@ -19,10 +19,15 @@
         methods:{
             gotoPage1(){
                 console.log("this. ", this.$router)
-                ??
+                this.$router.push({
+                  path:"menu2/ginam/20"
+                })
             },
             gotoPage2(){
-                ??
+                this.$router.push({
+                  name:"menu22",
+                  params:{name:"ddandongnae", age:40}
+                })
             }
         }
     }

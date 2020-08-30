@@ -18,10 +18,10 @@
         },
         methods:{
             gotoBack1(){
-                ??
+                this.$router.go(-1);
             },
             gotoPage2(){
-                ??
+                window.history.back();
             }
         }
     }

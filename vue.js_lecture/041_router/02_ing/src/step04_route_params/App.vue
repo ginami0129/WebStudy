@@ -4,7 +4,7 @@
       <router-link to="/" tag="li">home</router-link>
       <router-link to="/about" tag="li">about</router-link>
       <router-link to="/menu1?name=userName1&age=30" tag="li">menu1(query)</router-link>
-      <router-link to="/menu2??" tag="li">menu2(params)</router-link>
+      <router-link to="/menu2/userName2/20" tag="li">menu2(params)</router-link>
     </ul>
     <hr />
     <router-view/>

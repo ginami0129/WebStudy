@@ -1,11 +1,11 @@
 <template>
     <div id="app">
         <ul class="menu">
-            <router-link to="/" tag="li" ??>home</router-link>
-            <router-link to="/about" tag="li" ??>about</router-link>
-            <router-link to="/menu1?name=userName1&age=30" tag="li" ??>menu1(query)</router-link>
-            <router-link to="/menu2/userName2/20" tag="li" ??>menu2(params)</router-link>
-            <router-link to="/menu2/userName2" tag="li" ??>menu3(params)</router-link>
+            <router-link to="/" exact tag="li" active-class="active">home</router-link>
+            <router-link to="/about" tag="li" active-class="active">about</router-link>
+            <router-link to="/menu1?name=userName1&age=30" tag="li" active-class="active">menu1(query)</router-link>
+            <router-link to="/menu2/userName2/20" exact tag="li" active-class="active">menu2(params)</router-link>
+            <router-link to="/menu2/userName2" exact tag="li" active-class="active">menu3(params)</router-link>
         </ul>
         <hr/>
         <router-view/>
